@@ -3,7 +3,7 @@ import SpriteKit
 
 public class YouWonScene6: SKScene {
     
-    let star = SKSpriteNode(imageNamed: "Star/star")
+    let star = SKSpriteNode(imageNamed: "star")
     let starField = SKEmitterNode(fileNamed:"Particles/Stars")
     let winParticle = SKEmitterNode(fileNamed:"Particles/FinalConfetti")
     let starCount = SKSpriteNode(imageNamed: "StarCounter/6:6stars")

@@ -2,7 +2,7 @@ import SpriteKit
 
 public class GameScene5: GameScene {
     
-    let planet1 = SKSpriteNode(imageNamed: "Planets/globe3")
+    let planet1 = SKSpriteNode(imageNamed: "globe3")
     let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity6")
     
     override func resetScene() {

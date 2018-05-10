@@ -8,7 +8,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     let thrustSound = SKAudioNode(fileNamed: "Sounds/rocketThrust.wav")
     let fire = SKEmitterNode(fileNamed:"Particles/Fire")
     
-    let star = SKSpriteNode(imageNamed: "Star/star")
+    let star = SKSpriteNode(imageNamed: "star")
     var button = Button()
     let explosion = SKEmitterNode(fileNamed: "Particles/Explosion")
     let starField = SKEmitterNode(fileNamed:"Particles/Stars")
