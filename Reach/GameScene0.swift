@@ -2,10 +2,10 @@ import SpriteKit
 
 public class GameScene0: SKScene, SKPhysicsContactDelegate {
     
-    let rocket = SKSpriteNode(imageNamed: "Rocket/rocket")
-    let fadedRocket = SKSpriteNode(imageNamed: "Rocket/fadedRocket")
+    let rocket = SKSpriteNode(imageNamed: "rocket")
+    let fadedRocket = SKSpriteNode(imageNamed: "fadedRocket")
     let planet1 = SKSpriteNode(imageNamed: "globe1")
-    let fadedPlanet1 = SKSpriteNode(imageNamed: "Planets/fadedGlobe1")
+    let fadedPlanet1 = SKSpriteNode(imageNamed: "fadedGlobe1")
     let star = SKSpriteNode(imageNamed: "star")
     let fadedStar = SKSpriteNode(imageNamed: "fadedStar")
     let button = SKSpriteNode(imageNamed: "Button/redButton")

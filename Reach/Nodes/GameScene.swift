@@ -2,7 +2,7 @@ import SpriteKit
 
 public class GameScene: SKScene, SKPhysicsContactDelegate {
 
-    public var rocket = SKSpriteNode(imageNamed: "Rocket/rocket")
+    public var rocket = SKSpriteNode(imageNamed: "rocket")
     public var gravity = SKFieldNode.radialGravityField()
     public var gravity2 = SKFieldNode.radialGravityField()
     let thrustSound = SKAudioNode(fileNamed: "Sounds/rocketThrust.wav")
@@ -142,9 +142,9 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     
         rocket.physicsBody?.usesPreciseCollisionDetection = true
         rocket.physicsBody!.mass = 0.1
-        rocket.setScale(0.35)
+        rocket.setScale(0.22)
     
-        star.setScale(0.5)
+        star.setScale(0.4)
         star.physicsBody = SKPhysicsBody(texture: star.texture!, size: star.size)
         star.physicsBody?.isDynamic = false
         star.physicsBody?.categoryBitMask = PhysicsCategory.Star
@@ -207,7 +207,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         button.setScale(0.65)
         self.addChild(button)
     
-        fire!.position = CGPoint (x: 0, y: -80)
+        fire!.position = CGPoint (x: 1, y: -90)
         explosion!.position = CGPoint (x: 0, y: 50)
     }
     
