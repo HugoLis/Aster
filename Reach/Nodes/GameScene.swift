@@ -198,13 +198,13 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         bottomWall.physicsBody?.usesPreciseCollisionDetection = true
         self.addChild(bottomWall)
     
-        let buttonTexture: SKTexture = SKTexture(imageNamed:"Button/redButton")
-        let buttonTextureSelected: SKTexture = SKTexture(imageNamed:"Button/pressedButton")
+        let buttonTexture: SKTexture = SKTexture(imageNamed:"redButton")
+        let buttonTextureSelected: SKTexture = SKTexture(imageNamed:"pressedButton")
         button = Button(normalTexture: buttonTexture, selectedTexture: buttonTextureSelected, disabledTexture: buttonTexture)
     
-        button.position = CGPoint(x: 120 ,y: -235  )
+        button.position = CGPoint(x: 115 ,y: -235  )
         button.zPosition = 1
-        button.setScale(0.65)
+        button.setScale(0.55)
         self.addChild(button)
     
         fire!.position = CGPoint (x: 1, y: -90)

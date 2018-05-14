@@ -8,8 +8,8 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
     let fadedPlanet1 = SKSpriteNode(imageNamed: "fadedGlobe1")
     let star = SKSpriteNode(imageNamed: "star")
     let fadedStar = SKSpriteNode(imageNamed: "fadedStar")
-    let button = SKSpriteNode(imageNamed: "Button/redButton")
-    let fadedButton = SKSpriteNode(imageNamed: "Button/fadedButton")
+    let button = SKSpriteNode(imageNamed: "redButton")
+    let fadedButton = SKSpriteNode(imageNamed: "fadedButton")
     let starField = SKEmitterNode(fileNamed:"Particles/Stars")
     let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity")
     
@@ -27,7 +27,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
         self.addChild(info1)
       info1.zPosition = -20
         
-        fadedRocket.setScale(0.35)
+        fadedRocket.setScale(0.22)
         fadedRocket.zRotation = 0.52
         fadedRocket.position = CGPoint (x: -100, y: -245)
         addChild(fadedRocket)
@@ -36,7 +36,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
         fadedPlanet1.position = CGPoint (x: 50, y: 0)
         addChild(fadedPlanet1)
         
-        star.setScale(0.5)
+        star.setScale(0.4)
         star.position = CGPoint (x: -100, y: 250)
         addChild(star)
         
@@ -44,8 +44,8 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
         starField!.advanceSimulationTime(5)
         addChild(starField!)
     
-        fadedButton.setScale(0.65)
-        fadedButton.position = CGPoint(x: 120 ,y: -235)
+        fadedButton.setScale(0.55)
+        fadedButton.position = CGPoint(x: 115 ,y: -235)
         addChild(fadedButton)
         
     }
@@ -60,7 +60,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             planet1.position = CGPoint (x: 50, y: 0)
             addChild(planet1)
             
-            fadedStar.setScale(0.5)
+            fadedStar.setScale(0.4)
             fadedStar.position = CGPoint (x: -100, y: 250)
             addChild(fadedStar)
             
@@ -78,11 +78,11 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             fadedPlanet1.position = CGPoint (x: 50, y: 0)
             addChild(fadedPlanet1)
             
-            button.setScale(0.65)
-            button.position = CGPoint(x: 120 ,y: -235)
+            button.setScale(0.55)
+            button.position = CGPoint(x: 115 ,y: -235)
             addChild(button)
             
-            rocket.setScale(0.35)
+            rocket.setScale(0.22)
             rocket.zRotation = 0.52
             rocket.position = CGPoint (x: -100, y: -245)
             addChild(rocket)
