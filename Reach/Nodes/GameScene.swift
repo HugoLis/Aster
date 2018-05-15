@@ -15,8 +15,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let leftWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 50, height: 760))
     let rightWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 50, height: 760))
-    let topWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 580, height: 50))
-    let bottomWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 580, height: 50))
+    let topWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 600, height: 50))
+    let bottomWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 600, height: 50))
     public let defaultSize = CGSize(width: 480, height: 640)
     public var youWonScene: YouWonScene = YouWonScene1(size: CGSize(width: 480, height: 640))
 
@@ -127,7 +127,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
    override public func didMove(to view: SKView){
-    
+
         physicsWorld.gravity = CGVector.zero
         physicsWorld.contactDelegate = self
         
@@ -139,6 +139,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         rocket.physicsBody?.contactTestBitMask = PhysicsCategory.Planet
         rocket.physicsBody?.fieldBitMask = PhysicsCategory.Gravity
         rocket.physicsBody?.collisionBitMask = PhysicsCategory.None
+        rocket.physicsBody?.friction = 0
     
         rocket.physicsBody?.usesPreciseCollisionDetection = true
         rocket.physicsBody!.mass = 0.1
@@ -180,7 +181,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         rightWall.physicsBody?.usesPreciseCollisionDetection = true
         self.addChild(rightWall)
     
-        topWall.position = CGPoint(x: 0, y: 380)
+        topWall.position = CGPoint(x: 0, y: 400)
         topWall.physicsBody = SKPhysicsBody(rectangleOf: topWall.size)
         topWall.physicsBody!.isDynamic = false
         topWall.physicsBody?.categoryBitMask = PhysicsCategory.Edge
@@ -189,7 +190,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         topWall.physicsBody?.usesPreciseCollisionDetection = true
         self.addChild(topWall)
     
-        bottomWall.position = CGPoint(x: 0, y: -380)
+        bottomWall.position = CGPoint(x: 0, y: -400)
         bottomWall.physicsBody = SKPhysicsBody(rectangleOf: bottomWall.size)
         bottomWall.physicsBody!.isDynamic = false
         bottomWall.physicsBody?.categoryBitMask = PhysicsCategory.Edge

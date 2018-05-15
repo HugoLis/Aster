@@ -13,9 +13,9 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
     let starField = SKEmitterNode(fileNamed:"Particles/Stars")
     let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity")
     
-    let info1 = SKSpriteNode(imageNamed:"Intro/Intro1")
-    let info2 = SKSpriteNode(imageNamed:"Intro/Intro2")
-    let info3 = SKSpriteNode(imageNamed:"Intro/Intro3")
+    let arrow1 = SKSpriteNode(imageNamed:"arrow1")
+    let arrow2 = SKSpriteNode(imageNamed:"arrow2")
+    let arrow3 = SKSpriteNode(imageNamed:"arrow3")
     
     var tapCount = 0
 
@@ -23,10 +23,18 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
         
         backgroundColor = UIColor(red:0.16, green:0.16, blue:0.16, alpha:1.0)
         
-        info1.position = CGPoint(x:7, y:7)
-        //info1.setScale(0.75)
-        self.addChild(info1)
-      info1.zPosition = -20
+        arrow1.position = CGPoint(x:-76, y:205)
+        arrow1.setScale(0.75)
+        arrow1.zPosition = -20
+        self.addChild(arrow1)
+        
+        let text1 = SKLabelNode(fontNamed: "Helvetica")
+        text1.text = "Capture the star"
+        text1.fontSize = 80
+        text1.fontColor = SKColor.white
+        text1.position = CGPoint(x: 142, y: -30)
+        text1.setScale(0.35)
+        arrow1.addChild(text1)
         
         fadedRocket.setScale(0.22)
         fadedRocket.zRotation = 0.52
@@ -53,7 +61,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         
         if tapCount == 0 {
-            info1.removeFromParent()
+            arrow1.removeFromParent()
             star.removeFromParent()
             fadedPlanet1.removeFromParent()
             
@@ -65,13 +73,36 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             fadedStar.position = CGPoint (x: -100, y: 250)
             addChild(fadedStar)
             
-            info2.position = CGPoint(x:10, y:10)
-            self.addChild(info2)
+            arrow2.position = CGPoint(x:-60, y:80)
+            arrow2.setScale(0.75)
+            self.addChild(arrow2)
+            
+            let text2 = SKLabelNode(fontNamed: "Helvetica")
+            text2.text = "Use the gravity of planets"
+            text2.fontSize = 80
+            text2.fontColor = SKColor.white
+            text2.position = CGPoint(x: -35, y: 75)
+            text2.setScale(0.35)
+            arrow2.addChild(text2)
+            
+            let text22 = SKLabelNode(fontNamed: "Helvetica")
+            text22.text = "but don't hit them!"
+            text22.fontSize = 80
+            text22.fontColor = SKColor.white
+            text22.position = CGPoint(x: -35, y: 40)
+            text22.setScale(0.35)
+            arrow2.addChild(text22)
+    
+            visualGravity?.position = planet1.position
+            self.addChild(visualGravity!)
+
         }
         
         if tapCount == 1 {
-            info2.removeFromParent()
+            //info2.removeFromParent()
+            arrow2.removeFromParent()
             planet1.removeFromParent()
+            visualGravity?.removeFromParent()
             fadedButton.removeFromParent()
             fadedRocket.removeFromParent()
             
@@ -88,8 +119,26 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             rocket.position = CGPoint (x: -100, y: -245)
             addChild(rocket)
             
-            info3.position = CGPoint(x:0, y:10)
-            self.addChild(info3)
+            arrow3.position = CGPoint(x:90, y:-188)
+            arrow3.setScale(0.75)
+            self.addChild(arrow3)
+            
+            let text3 = SKLabelNode(fontNamed: "Helvetica")
+            text3.text = "Press and hold then release"
+            text3.fontSize = 80
+            text3.fontColor = SKColor.white
+            text3.position = CGPoint(x: -100, y: 60)
+            text3.setScale(0.35)
+            arrow3.addChild(text3)
+            
+            let text33 = SKLabelNode(fontNamed: "Helvetica")
+            text33.text = "(as many times as you need)"
+            text33.fontSize = 60
+            text33.fontColor = SKColor.white
+            text33.position = CGPoint(x: -100, y: 35)
+            text33.setScale(0.35)
+            arrow3.addChild(text33)
+
         }
         
         if tapCount == 2 {
