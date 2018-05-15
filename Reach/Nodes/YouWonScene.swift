@@ -30,16 +30,18 @@ public class YouWonScene: SKScene {
         
         let label1 = SKLabelNode(fontNamed: "Helvetica")
         label1.text = "You Did It!"
-        label1.fontSize = 40
+        label1.fontSize = 160
         label1.fontColor = SKColor.white
         label1.position = CGPoint(x: size.width/2, y: size.height/2 + 180)
+        label1.setScale(0.25)
         addChild(label1)
         
         let label3 = SKLabelNode(fontNamed: "Helvetica")
         label3.text = "Tap to play the next level."
-        label3.fontSize = 22
+        label3.fontSize = 88
         label3.fontColor = SKColor.white
         label3.position = CGPoint(x: size.width/2, y: size.height/2 - 200)
+        label3.setScale(0.25)
         addChild(label3)
     }
     

@@ -153,7 +153,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         star.physicsBody?.usesPreciseCollisionDetection = true
     
         starField!.position = CGPoint(x: 0, y: 0)
-        starField!.advanceSimulationTime(5)
+        starField!.advanceSimulationTime(15)
         addChild(starField!)
     
         gravity.strength = 0

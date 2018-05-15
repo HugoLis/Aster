@@ -24,6 +24,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
         backgroundColor = UIColor(red:0.16, green:0.16, blue:0.16, alpha:1.0)
         
         info1.position = CGPoint(x:7, y:7)
+        //info1.setScale(0.75)
         self.addChild(info1)
       info1.zPosition = -20
         
@@ -41,7 +42,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
         addChild(star)
         
         starField!.position = CGPoint(x: 0, y: 0)
-        starField!.advanceSimulationTime(5)
+        starField!.advanceSimulationTime(15)
         addChild(starField!)
     
         fadedButton.setScale(0.55)
