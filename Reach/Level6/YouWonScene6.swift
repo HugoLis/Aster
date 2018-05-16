@@ -6,7 +6,7 @@ public class YouWonScene6: SKScene {
     let star = SKSpriteNode(imageNamed: "star")
     let starField = SKEmitterNode(fileNamed:"Particles/Stars")
     let winParticle = SKEmitterNode(fileNamed:"Particles/FinalConfetti")
-    let starCount = SKSpriteNode(imageNamed: "StarCounter/6:6stars")
+    let starCount = SKSpriteNode(imageNamed: "6-6stars")
     
     override public init(size: CGSize) {
         
@@ -18,9 +18,9 @@ public class YouWonScene6: SKScene {
         star.position = CGPoint (x: size.width/2, y: size.height/2 + 50)
         addChild(star)
         
-        starCount.setScale(0.5)
+        starCount.setScale(0.4)
         starCount.zPosition = -200
-        starCount.position = CGPoint(x: size.width/2, y: size.height/2-150)
+        starCount.position = CGPoint(x: size.width/2, y: size.height/2-158)
         addChild(starCount)
         
         winParticle!.position = star.position
@@ -33,16 +33,18 @@ public class YouWonScene6: SKScene {
         
         let label1 = SKLabelNode(fontNamed: "Helvetica")
         label1.text = "You Won The Game!"
-        label1.fontSize = 40
+        label1.fontSize = 160
         label1.fontColor = SKColor.white
         label1.position = CGPoint(x: size.width/2, y: size.height/2 + 180)
+        label1.setScale(0.25)
         addChild(label1)
         
         let label4 = SKLabelNode(fontNamed: "Helvetica")
-        label4.text = "Tap to play the game again."
-        label4.fontSize = 22
+        label4.text = "Tap to play again"
+        label4.fontSize = 88
         label4.fontColor = SKColor.white
         label4.position = CGPoint(x: size.width/2, y: size.height/2 - 200)
+        label4.setScale(0.25)
         addChild(label4)
     }
     

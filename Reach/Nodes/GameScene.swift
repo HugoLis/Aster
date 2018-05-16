@@ -163,7 +163,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         gravity2.categoryBitMask = PhysicsCategory.Gravity
 
     
-        leftWall.position = CGPoint(x: -325, y: 0)
+        //leftWall.position = CGPoint(x: -325, y: 0)
+        leftWall.position = CGPoint(x: -self.frame.width/2-75, y: 0)
         leftWall.physicsBody = SKPhysicsBody(rectangleOf: leftWall.size)
         leftWall.physicsBody!.isDynamic = false
         leftWall.physicsBody?.categoryBitMask = PhysicsCategory.Edge
@@ -172,7 +173,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         leftWall.physicsBody?.usesPreciseCollisionDetection = true
         self.addChild(leftWall)
     
-        rightWall.position = CGPoint(x: 325, y: 0)
+        //rightWall.position = CGPoint(x: 325, y: 0)
+        rightWall.position = CGPoint(x: self.frame.width/2+75, y: 0)
         rightWall.physicsBody = SKPhysicsBody(rectangleOf: rightWall.size)
         rightWall.physicsBody!.isDynamic = false
         rightWall.physicsBody?.categoryBitMask = PhysicsCategory.Edge
@@ -181,7 +183,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         rightWall.physicsBody?.usesPreciseCollisionDetection = true
         self.addChild(rightWall)
     
-        topWall.position = CGPoint(x: 0, y: 400)
+        //topWall.position = CGPoint(x: 0, y: 400)
+        topWall.position = CGPoint(x: 0, y: self.frame.height/2+75)
         topWall.physicsBody = SKPhysicsBody(rectangleOf: topWall.size)
         topWall.physicsBody!.isDynamic = false
         topWall.physicsBody?.categoryBitMask = PhysicsCategory.Edge
@@ -190,7 +193,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         topWall.physicsBody?.usesPreciseCollisionDetection = true
         self.addChild(topWall)
     
-        bottomWall.position = CGPoint(x: 0, y: -400)
+        //bottomWall.position = CGPoint(x: 0, y: -400)
+        bottomWall.position = CGPoint(x: 0, y: -self.frame.height/2-75)
         bottomWall.physicsBody = SKPhysicsBody(rectangleOf: bottomWall.size)
         bottomWall.physicsBody!.isDynamic = false
         bottomWall.physicsBody?.categoryBitMask = PhysicsCategory.Edge

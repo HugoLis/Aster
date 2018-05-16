@@ -5,7 +5,7 @@ public class YouWonScene: SKScene {
     let star = SKSpriteNode(imageNamed: "star")
     let starField = SKEmitterNode(fileNamed:"Particles/Stars")
     let winParticle = SKEmitterNode(fileNamed:"Particles/WinParticle")
-    var starCount =  SKSpriteNode(imageNamed: "StarCounter/1:6stars")
+    var starCount =  SKSpriteNode(imageNamed: "1-6stars")
     
         
     override public func didMove(to view: SKView){
@@ -15,9 +15,9 @@ public class YouWonScene: SKScene {
         star.position = CGPoint (x: size.width/2, y: size.height/2 + 50)
         addChild(star)
         
-        starCount.setScale(0.5)
+        starCount.setScale(0.4)
         starCount.zPosition = -200
-        starCount.position = CGPoint(x: size.width/2, y: size.height/2-150)
+        starCount.position = CGPoint(x: size.width/2, y: size.height/2-158)
         addChild(starCount)
         
         winParticle!.position = star.position
@@ -37,7 +37,7 @@ public class YouWonScene: SKScene {
         addChild(label1)
         
         let label3 = SKLabelNode(fontNamed: "Helvetica")
-        label3.text = "Tap to play the next level."
+        label3.text = "Tap to play the next level"
         label3.fontSize = 88
         label3.fontColor = SKColor.white
         label3.position = CGPoint(x: size.width/2, y: size.height/2 - 200)

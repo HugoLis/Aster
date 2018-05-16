@@ -18,7 +18,7 @@ public class GameScene4: GameScene {
     
     override public func loadNextScene(size: CGSize){
         youWonScene = YouWonScene4(size: size)
-        youWonScene.starCount = SKSpriteNode(imageNamed: "StarCounter/4:6stars")
+        youWonScene.starCount = SKSpriteNode(imageNamed: "4-6stars")
     }
     
     override public func didMove(to view: SKView) {
