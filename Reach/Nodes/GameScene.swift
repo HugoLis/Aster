@@ -226,31 +226,25 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         currentDeaths.setScale(0.35)
         self.addChild(currentDeaths)
     
-//       if leastDeathsInRun1 == -1 {
-//           leastDeaths.text = "Least deaths in run: x"
-//       }
-//       else{
-//           leastDeaths.text = "Least deaths in run: \(leastDeathsInRun1)"
-//       }
         let userDefault = UserDefaults.standard
         let value1 = userDefault.integer(forKey: "run1")
     
         let leastDeaths = SKLabelNode(fontNamed: "Futura-Medium")
-    
+        //0 means no record yet
         if value1 == 0{
-            leastDeaths.text = "Least deaths in run: x"
+            leastDeaths.text = ""
         }
+        // -1 means zero deaths
         else if value1 == -1{
-            leastDeaths.text = "Least deaths in run: 0"
+            leastDeaths.text = "Run record: 0"
         }
         else {
-            leastDeaths.text = "Least deaths in run: \(value1)"
+            leastDeaths.text = "Run record: \(value1)"
         }
-    
     
         leastDeaths.fontSize = 40
         leastDeaths.fontColor = SKColor.white
-        leastDeaths.position = CGPoint(x: 145, y: 300)
+        leastDeaths.position = CGPoint(x: 170, y: 300)
         leastDeaths.setScale(0.35)
         self.addChild(leastDeaths)
 
