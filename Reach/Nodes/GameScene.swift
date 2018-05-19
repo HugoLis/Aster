@@ -19,7 +19,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     let bottomWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 600, height: 50))
     public let defaultSize = CGSize(width: 480, height: 640)
     public var youWonScene: YouWonScene = YouWonScene1(size: CGSize(width: 480, height: 640))
-
+    
     public func setGravity(){
     }
     
@@ -64,6 +64,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     public func RocketDidCollideWithPlanet(rocket: SKSpriteNode, planet: SKSpriteNode) {
+        
+        numberOfDeaths += 1
         
         let explosionAction = SKAction.run(){
             let explosion = SKEmitterNode(fileNamed:"Particles/Explosion")!
@@ -123,6 +125,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     
     public func RocketDidCollideWithEdge(rocket: SKSpriteNode, edge: SKSpriteNode) {
         rocket.removeFromParent()
+        numberOfDeaths += 1
         self.resetScene()
     }
     
@@ -214,6 +217,43 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     
         fire!.position = CGPoint (x: 1, y: -90)
         explosion!.position = CGPoint (x: 0, y: 50)
+    
+        let currentDeaths = SKLabelNode(fontNamed: "Futura-Medium")
+        currentDeaths.text = "Deaths: \(numberOfDeaths)"
+        currentDeaths.fontSize = 40
+        currentDeaths.fontColor = SKColor.white
+        currentDeaths.position = CGPoint(x: -185, y: 300)
+        currentDeaths.setScale(0.35)
+        self.addChild(currentDeaths)
+    
+//       if leastDeathsInRun1 == -1 {
+//           leastDeaths.text = "Least deaths in run: x"
+//       }
+//       else{
+//           leastDeaths.text = "Least deaths in run: \(leastDeathsInRun1)"
+//       }
+        let userDefault = UserDefaults.standard
+        let value1 = userDefault.integer(forKey: "run1")
+    
+        let leastDeaths = SKLabelNode(fontNamed: "Futura-Medium")
+    
+        if value1 == 0{
+            leastDeaths.text = "Least deaths in run: x"
+        }
+        else if value1 == -1{
+            leastDeaths.text = "Least deaths in run: 0"
+        }
+        else {
+            leastDeaths.text = "Least deaths in run: \(value1)"
+        }
+    
+    
+        leastDeaths.fontSize = 40
+        leastDeaths.fontColor = SKColor.white
+        leastDeaths.position = CGPoint(x: 145, y: 300)
+        leastDeaths.setScale(0.35)
+        self.addChild(leastDeaths)
+
     }
     
     override public func update(_ currentTime: CFTimeInterval){

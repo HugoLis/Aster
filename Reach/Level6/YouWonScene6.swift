@@ -55,8 +55,29 @@ public class YouWonScene6: SKScene {
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
         if let gameScene = GameScene1(fileNamed: "GameScene"){
+            //save score
+            if (numberOfDeaths == 0){
+                leastDeathsInRun1 = -1
+            }
+            else if numberOfDeaths < leastDeathsInRun1 || leastDeathsInRun1 == -2{
+                leastDeathsInRun1 = numberOfDeaths
+            }
+
+            //reset death numbers
+            numberOfDeaths = 0
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(leastDeathsInRun1, forKey: "run1")
+            
             gameScene.scaleMode = .aspectFill
             self.view?.presentScene(gameScene, transition: reveal)
         }
     }
+
+//    override public func didMove(to view: SKView) {
+//        var run1Default = UserDefaults.standard
+//
+//        if run1Default.value(forKey: "leastDeathsInsRun1") != nil {
+//            leastDeathsInRun1 = run1Default.value(forKey: "leastDeathsInRun1") as! Int
+//        }
+//    }
 }

@@ -9,6 +9,7 @@ public class YouWonScene: SKScene {
     
         
     override public func didMove(to view: SKView){
+        
         backgroundColor = UIColor(red:0.16, green:0.16, blue:0.16, alpha:1.0)
         
         star.setScale(0.5)
@@ -43,7 +44,7 @@ public class YouWonScene: SKScene {
         label3.position = CGPoint(x: size.width/2, y: size.height/2 - 200)
         label3.setScale(0.25)
         addChild(label3)
+        
     }
-    
 }
 
