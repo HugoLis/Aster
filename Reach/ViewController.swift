@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     sceneView.PlayBackgroundMusic()
     
-    if let scene = GameScene0(fileNamed: "GameScene") {
+    if let scene = Menu(fileNamed: "GameScene") {
       scene.scaleMode = .aspectFill
       sceneView.presentScene(scene)
     }
