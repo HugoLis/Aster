@@ -41,13 +41,13 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         self.addChild(orbitButton)
 
         
-//        let text1 = SKLabelNode(fontNamed: "Helvetica")
-//        text1.text = "Capture the star"
-//        text1.fontSize = 80
-//        text1.fontColor = SKColor.white
-//        text1.position = CGPoint(x: 142, y: -30)
-//        text1.setScale(0.35)
-//        arrow1.addChild(text1)
+        let text1 = SKLabelNode(fontNamed: "Helvetica")
+        text1.text = "Choose a run to play"
+        text1.fontSize = 90
+        text1.fontColor = SKColor.white
+        text1.position = CGPoint(x: 0, y: 200)
+        text1.setScale(0.35)
+        self.addChild(text1)
         
 //        fadedRocket.setScale(0.22)
 //        fadedRocket.zRotation = 0.52
