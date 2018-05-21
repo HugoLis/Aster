@@ -47,7 +47,7 @@ public class GameSceneB6: GameScene {
         
         super.didMove(to: view)
         
-        rocket.zRotation = 0.8
+        rocket.zRotation = 0.9
         
         planet1.setScale(0.5)
         planet1.physicsBody = SKPhysicsBody(circleOfRadius: planet1.size.height/2)
@@ -70,11 +70,11 @@ public class GameSceneB6: GameScene {
         
         rocket.position = CGPoint (x: -100, y: -255)
         addChild(rocket)
-        planet1.position = CGPoint (x: 5, y: -90)
+        planet1.position = CGPoint (x: 0, y: -50)
         addChild(planet1)
-        planet2.position = CGPoint (x: -30, y: 200)
+        planet2.position = CGPoint (x: -120, y: 100)
         addChild(planet2)
-        star.position = CGPoint (x: 100, y: 240)
+        star.position = CGPoint (x: 165, y: 235)
         addChild(star)
         
         visualGravity!.position = planet1.position
@@ -84,8 +84,8 @@ public class GameSceneB6: GameScene {
     }
     
     override public func setGravity(){
-        gravity.strength = 3.65
-        gravity2.strength = -2
+        gravity.strength = 4
+        gravity2.strength = -1.6
     }
 }
 

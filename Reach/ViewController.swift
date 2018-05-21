@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Reach
-//
-//  Created by Turma Tarde on 4/3/18.
-//  Copyright © 2018 Turma Tarde. All rights reserved.
-//
 
 import UIKit
 import Foundation
@@ -14,6 +7,7 @@ public var numberOfDeaths = 0
 public var leastDeathsInRun1 = -2
 public var leastDeathsInRun2 = -2
 public var leastDeathsInRun3 = -2
+public var numberOfStars = 10
 
 class ViewController: UIViewController {
 

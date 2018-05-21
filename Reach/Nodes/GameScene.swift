@@ -10,6 +10,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     let fire = SKEmitterNode(fileNamed:"Particles/Fire")
     
     let star = SKSpriteNode(imageNamed: "star")
+    let star2 = SKSpriteNode(imageNamed: "star")
+    let star3 = SKSpriteNode(imageNamed: "star")
     var button = Button()
     var backToMenu = MenuButton()
     let explosion = SKEmitterNode(fileNamed: "Particles/Explosion")
@@ -158,6 +160,14 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         star.physicsBody?.collisionBitMask = PhysicsCategory.None
         star.physicsBody?.usesPreciseCollisionDetection = true
     
+        star2.setScale(0.4)
+        star2.physicsBody = SKPhysicsBody(texture: star.texture!, size: star.size)
+        star2.physicsBody?.isDynamic = false
+        star2.physicsBody?.categoryBitMask = PhysicsCategory.Star
+        star2.physicsBody?.contactTestBitMask = PhysicsCategory.Rocket
+        star2.physicsBody?.collisionBitMask = PhysicsCategory.None
+        star2.physicsBody?.usesPreciseCollisionDetection = true
+    
         starField!.position = CGPoint(x: 0, y: 0)
         starField!.advanceSimulationTime(15)
         addChild(starField!)
@@ -239,7 +249,6 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     
         let userDefault = UserDefaults.standard
         let value1 = userDefault.integer(forKey: "run1")
-        //let userDefault2 = UserDefaults.standard
         let value2 = userDefault.integer(forKey: "run2")
         let value3 = userDefault.integer(forKey: "run3")
     

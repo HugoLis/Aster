@@ -56,6 +56,10 @@ public class YouWonScene6: SKScene {
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
         if let gameScene = Menu(fileNamed: "GameScene"){
             //save score
+
+            let userDefault = UserDefaults.standard
+            leastDeathsInRun1 = userDefault.integer(forKey: "run1")
+            
             if (numberOfDeaths == 0){
                 leastDeathsInRun1 = -1
             }
