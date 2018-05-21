@@ -69,13 +69,6 @@ public class RunButton: SKSpriteNode {
     
     
     public func startRun() {
-        
-        let parentNode = self.parent as! Menu
-        let reveal = SKTransition.doorway(withDuration: 1)
-        if let gameScene = GameScene1(fileNamed: "GameScene"){
-            gameScene.scaleMode = .aspectFill
-            parentNode.self.view?.presentScene(gameScene, transition: reveal)
-        }
     }
     
     
@@ -86,9 +79,9 @@ public class RunButton: SKSpriteNode {
         }
         isSelected = true
         //action here:
+
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
         self.startRun()
-        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.02, execute: {
-        //
         //})
         
     }

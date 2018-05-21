@@ -2,16 +2,13 @@
 import Foundation
 import SpriteKit
 
-public class AntigravityButton: RunButton {
+public class MenuButton: RunButton {
     
     override public func startRun() {
-        
-        currentRun = 2
-
         numberOfDeaths = 0
-        let parentNode = self.parent as! Menu
-        let reveal = SKTransition.doorway(withDuration: 1)
-        if let gameScene = GameSceneB6(fileNamed: "GameScene"){//B1
+        let parentNode = self.parent as! GameScene
+        let reveal = SKTransition.doorsCloseHorizontal(withDuration: 0.75)
+        if let gameScene = Menu(fileNamed: "GameScene"){
             gameScene.scaleMode = .aspectFill
             parentNode.self.view?.presentScene(gameScene, transition: reveal)
         }

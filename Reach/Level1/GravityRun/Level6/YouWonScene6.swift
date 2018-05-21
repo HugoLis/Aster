@@ -31,19 +31,19 @@ public class YouWonScene6: SKScene {
         starField!.advanceSimulationTime(5)
         addChild(starField!)
         
-        let label1 = SKLabelNode(fontNamed: "Helvetica")
-        label1.text = "You Won The Game!"
-        label1.fontSize = 160
+        let label1 = SKLabelNode(fontNamed: "Futura-Medium")
+        label1.text = "You won Gravity Run!"
+        label1.fontSize = 140
         label1.fontColor = SKColor.white
         label1.position = CGPoint(x: size.width/2, y: size.height/2 + 180)
         label1.setScale(0.25)
         addChild(label1)
         
-        let label4 = SKLabelNode(fontNamed: "Helvetica")
-        label4.text = "Tap to play again"
+        let label4 = SKLabelNode(fontNamed: "Futura-Medium")
+        label4.text = "Tap to go back to the menu"
         label4.fontSize = 88
         label4.fontColor = SKColor.white
-        label4.position = CGPoint(x: size.width/2, y: size.height/2 - 200)
+        label4.position = CGPoint(x: size.width/2, y: size.height/2 - 205)
         label4.setScale(0.25)
         addChild(label4)
     }
@@ -54,7 +54,7 @@ public class YouWonScene6: SKScene {
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-        if let gameScene = GameScene1(fileNamed: "GameScene"){
+        if let gameScene = Menu(fileNamed: "GameScene"){
             //save score
             if (numberOfDeaths == 0){
                 leastDeathsInRun1 = -1
@@ -72,12 +72,4 @@ public class YouWonScene6: SKScene {
             self.view?.presentScene(gameScene, transition: reveal)
         }
     }
-
-//    override public func didMove(to view: SKView) {
-//        var run1Default = UserDefaults.standard
-//
-//        if run1Default.value(forKey: "leastDeathsInsRun1") != nil {
-//            leastDeathsInRun1 = run1Default.value(forKey: "leastDeathsInRun1") as! Int
-//        }
-//    }
 }

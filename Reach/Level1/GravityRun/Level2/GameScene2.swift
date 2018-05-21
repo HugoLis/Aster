@@ -1,31 +1,30 @@
 import SpriteKit
 
-public class GameScene1: GameScene {
-
-    let planet1 = SKSpriteNode(imageNamed: "globe1")
-    let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity")
-    var introWasShown = 0
+public class GameScene2: GameScene {
     
-    override func resetScene(){
+    let planet1 = SKSpriteNode(imageNamed: "globe2")
+    let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity2")
+    
+    override func resetScene () {
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-        if let gameScene = GameScene1(fileNamed: "GameScene"){
+        if let gameScene = GameScene2(fileNamed: "GameScene"){
             gameScene.scaleMode = .aspectFill
             self.view?.presentScene(gameScene, transition: reveal)
         }
     }
     
     override public func loadNextScene(size: CGSize){
-        youWonScene = YouWonScene1(size: size)
-        youWonScene.starCount = SKSpriteNode(imageNamed: "1-6stars")
+        youWonScene = YouWonScene2(size: size)
+        youWonScene.starCount = SKSpriteNode(imageNamed: "2-6stars")
     }
     
     override public func didMove(to view: SKView) {
         
         super.didMove(to: view)
         
-        rocket.zRotation = 0.52
+        rocket.zRotation = -0.7
         
-        planet1.setScale(0.75)
+        planet1.setScale(0.6)
         planet1.physicsBody = SKPhysicsBody(circleOfRadius: planet1.size.height/2)
         planet1 .physicsBody?.isDynamic = false
         planet1.physicsBody?.categoryBitMask = PhysicsCategory.Planet
@@ -33,20 +32,20 @@ public class GameScene1: GameScene {
         planet1.physicsBody?.collisionBitMask = PhysicsCategory.None
         planet1.physicsBody?.usesPreciseCollisionDetection = true
         planet1.addChild(gravity)
-        
-        rocket.position = CGPoint (x: -100, y: -255)
+
+        rocket.position = CGPoint (x: -100, y: -249)
         addChild(rocket)
-        planet1.position = CGPoint (x: 50, y: -10)
+        planet1.position = CGPoint (x: -100, y: 40)
         addChild(planet1)
-        star.position = CGPoint (x: -100, y: 240)
+        star.position = CGPoint (x: 0, y: 240)
         addChild(star)
         
         visualGravity!.position = planet1.position
         addChild(visualGravity!)
     }
-
-    override public func setGravity() {
-        gravity.strength = 0.95
+    
+    override public func setGravity(){
+        gravity.strength = 1.4
     }
 }
 

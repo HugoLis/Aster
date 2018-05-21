@@ -57,6 +57,9 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
         fadedButton.position = CGPoint(x: 115 ,y: -235)
         addChild(fadedButton)
         
+        let introDefault = UserDefaults.standard
+        introDefault.set(1, forKey: "introWasShown")
+        
     }
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         

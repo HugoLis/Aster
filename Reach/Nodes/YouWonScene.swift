@@ -29,19 +29,19 @@ public class YouWonScene: SKScene {
         starField!.advanceSimulationTime(5)
         addChild(starField!)
         
-        let label1 = SKLabelNode(fontNamed: "Helvetica")
-        label1.text = "You Did It!"
+        let label1 = SKLabelNode(fontNamed: "Futura-Medium")
+        label1.text = "You did it!"
         label1.fontSize = 160
         label1.fontColor = SKColor.white
         label1.position = CGPoint(x: size.width/2, y: size.height/2 + 180)
         label1.setScale(0.25)
         addChild(label1)
         
-        let label3 = SKLabelNode(fontNamed: "Helvetica")
+        let label3 = SKLabelNode(fontNamed: "Futura-Medium")
         label3.text = "Tap to play the next level"
         label3.fontSize = 88
         label3.fontColor = SKColor.white
-        label3.position = CGPoint(x: size.width/2, y: size.height/2 - 200)
+        label3.position = CGPoint(x: size.width/2, y: size.height/2 - 205)
         label3.setScale(0.25)
         addChild(label3)
         

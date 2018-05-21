@@ -45,13 +45,13 @@ public class GameScene4: GameScene {
         planet2.physicsBody?.usesPreciseCollisionDetection = true
         planet2.addChild(gravity2)
         
-        rocket.position = CGPoint (x: -95, y: -237)
+        rocket.position = CGPoint (x: -95, y: -247)
         addChild(rocket)
-        planet1.position = CGPoint (x: -120, y: -83)
+        planet1.position = CGPoint (x: -120, y: -93)
         addChild(planet1)
-        planet2.position = CGPoint (x: 120, y: 87)
+        planet2.position = CGPoint (x: 120, y: 77)
         addChild(planet2)
-        star.position = CGPoint (x: 100, y: 250)
+        star.position = CGPoint (x: 100, y: 240)
         addChild(star)
         
         visualGravity!.position = planet1.position
