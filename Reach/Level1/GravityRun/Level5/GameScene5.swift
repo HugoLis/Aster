@@ -46,7 +46,7 @@ public class GameScene5: GameScene {
     }
     
     override public func setGravity(){
-        gravity.strength = 4
+        gravity.strength = 5
     }
 }
 
