@@ -2,7 +2,7 @@ import SpriteKit
 
 public class GameSceneC4: GameSceneC {
     
-    let planet1 = SKSpriteNode(imageNamed: "globe6")
+    let planet1 = SKSpriteNode(imageNamed: "globe8")
     let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity3")
     
     override func resetScene () {
@@ -21,10 +21,10 @@ public class GameSceneC4: GameSceneC {
     override public func didMove(to view: SKView) {
         
         super.didMove(to: view)
-        
+        numberOfStars = 3
         rocket.zRotation = 0.7
         
-        planet1.setScale(0.5)
+        planet1.setScale(0.3)
         planet1.physicsBody = SKPhysicsBody(circleOfRadius: planet1.size.height/2)
         planet1 .physicsBody?.isDynamic = false
         planet1.physicsBody?.categoryBitMask = PhysicsCategory.Planet
@@ -35,10 +35,15 @@ public class GameSceneC4: GameSceneC {
         
         rocket.position = CGPoint (x: -100, y: -249)
         addChild(rocket)
-        planet1.position = CGPoint (x: 0, y: 100)
+        planet1.position = CGPoint (x: 0, y: 20)
         addChild(planet1)
-        star.position = CGPoint (x: 0, y: -50)
+        star.position = CGPoint (x: -80, y: 20)
         addChild(star)
+        star2.position = CGPoint (x: 0, y: -100)
+        addChild(star2)
+        star3.position = CGPoint (x: 0, y: 200)
+        addChild(star3)
+
         
         visualGravity!.position = planet1.position
         visualGravity!.setScale(1)
@@ -46,7 +51,7 @@ public class GameSceneC4: GameSceneC {
     }
     
     override public func setGravity(){
-        gravity.strength = 4
+        gravity.strength = 20
     }
 }
 

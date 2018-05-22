@@ -24,7 +24,9 @@ public class GameSceneC: GameScene{
 
             let resetScene = SKAction.run(){
                 //Delay to let the explosion end
+                inTransition = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    inTransition = false
                     let reveal = SKTransition.fade(withDuration: 1)
                     let gameSize = self.size
                     self.loadNextScene(size: gameSize)

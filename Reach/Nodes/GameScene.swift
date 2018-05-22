@@ -86,7 +86,9 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let resetSceneAction = SKAction.run(){
             //Delay to let the explosion end
+            inTransition = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                inTransition = false
                 self.resetScene()
             })
         }
@@ -113,7 +115,9 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         let resetScene = SKAction.run(){
             //Delay to let the explosion end
+            inTransition = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                inTransition = false
                 let reveal = SKTransition.fade(withDuration: 1)
                 let gameSize = self.size
                 self.loadNextScene(size: gameSize)
@@ -166,6 +170,15 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         star2.physicsBody?.contactTestBitMask = PhysicsCategory.Rocket
         star2.physicsBody?.collisionBitMask = PhysicsCategory.None
         star2.physicsBody?.usesPreciseCollisionDetection = true
+    
+        star3.setScale(0.4)
+        star3.physicsBody = SKPhysicsBody(texture: star.texture!, size: star.size)
+        star3.physicsBody?.isDynamic = false
+        star3.physicsBody?.categoryBitMask = PhysicsCategory.Star
+        star3.physicsBody?.contactTestBitMask = PhysicsCategory.Rocket
+        star3.physicsBody?.collisionBitMask = PhysicsCategory.None
+        star3.physicsBody?.usesPreciseCollisionDetection = true
+
     
         starField!.position = CGPoint(x: 0, y: 0)
         starField!.advanceSimulationTime(15)

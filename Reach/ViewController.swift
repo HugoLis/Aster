@@ -8,6 +8,7 @@ public var leastDeathsInRun1 = -2
 public var leastDeathsInRun2 = -2
 public var leastDeathsInRun3 = -2
 public var numberOfStars = 10
+public var inTransition = false
 
 class ViewController: UIViewController {
 

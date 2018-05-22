@@ -2,8 +2,8 @@ import SpriteKit
 
 public class GameSceneC1: GameSceneC {
 
-    let planet1 = SKSpriteNode(imageNamed: "globe5")
-    let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity3")
+    let planet1 = SKSpriteNode(imageNamed: "globe1")
+    let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity")
     
     override func resetScene() {
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
@@ -43,6 +43,7 @@ public class GameSceneC1: GameSceneC {
         addChild(star2)
         
         visualGravity!.position = planet1.position
+        visualGravity!.setScale(1)
         addChild(visualGravity!)
     }
     

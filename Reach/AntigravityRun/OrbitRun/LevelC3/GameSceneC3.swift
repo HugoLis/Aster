@@ -24,10 +24,10 @@ public class GameSceneC3: GameSceneC {
     override public func didMove(to view: SKView) {
         
         super.didMove(to: view)
-        
+        numberOfStars = 2
         rocket.zRotation = -0.6
         
-        planet1.setScale(0.55)
+        planet1.setScale(0.3)
         planet1.physicsBody = SKPhysicsBody(circleOfRadius: planet1.size.height/2)
         planet1 .physicsBody?.isDynamic = false
         planet1.physicsBody?.categoryBitMask = PhysicsCategory.Planet
@@ -36,7 +36,8 @@ public class GameSceneC3: GameSceneC {
         planet1.physicsBody?.usesPreciseCollisionDetection = true
         planet1.addChild(gravity)
         
-        planet2.setScale(0.55)
+        //de cima
+        planet2.setScale(0.45)
         planet2.physicsBody = SKPhysicsBody(circleOfRadius: planet2.size.height/2)
         planet2 .physicsBody?.isDynamic = false
         planet2.physicsBody?.categoryBitMask = PhysicsCategory.Planet
@@ -49,13 +50,16 @@ public class GameSceneC3: GameSceneC {
         addChild(rocket)
         planet1.position = CGPoint (x: 115, y: -100)
         addChild(planet1)
-        planet2.position = CGPoint (x: -115, y: 87)
+        planet2.position = CGPoint (x: 115, y: 150)
         addChild(planet2)
-        star.position = CGPoint (x: 100, y: 240)
+        star.position = CGPoint (x: -130, y: 30)
         addChild(star)
+        star2.position = CGPoint (x: 0, y: 60)
+        addChild(star2)
+
         
         visualGravity!.position = planet1.position
-        visualGravity!.setScale(0.9)
+        visualGravity!.setScale(0.7)
         addChild(visualGravity!)
         visualGravity2!.position = planet2.position
         visualGravity2!.setScale(0.9)
@@ -64,7 +68,7 @@ public class GameSceneC3: GameSceneC {
     
     override public func setGravity(){
         gravity.strength = -2.5
-        gravity2.strength = -2.5
+        gravity2.strength = -3.5
     }
 }
 

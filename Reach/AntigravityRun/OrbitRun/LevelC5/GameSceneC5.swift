@@ -24,10 +24,10 @@ public class GameSceneC5: GameSceneC {
     override public func didMove(to view: SKView) {
         
         super.didMove(to: view)
+        numberOfStars = 3
+        rocket.zRotation = 0.7
         
-        rocket.zRotation = -1.1
-        
-        planet1.setScale(0.6)
+        planet1.setScale(0.3)
         planet1.physicsBody = SKPhysicsBody(circleOfRadius: planet1.size.height/2)
         planet1 .physicsBody?.isDynamic = false
         planet1.physicsBody?.categoryBitMask = PhysicsCategory.Planet
@@ -36,7 +36,7 @@ public class GameSceneC5: GameSceneC {
         planet1.physicsBody?.usesPreciseCollisionDetection = true
         planet1.addChild(gravity)
         
-        planet2.setScale(0.6)
+        planet2.setScale(0.3)
         planet2.physicsBody = SKPhysicsBody(circleOfRadius: planet2.size.height/2)
         planet2 .physicsBody?.isDynamic = false
         planet2.physicsBody?.categoryBitMask = PhysicsCategory.Planet
@@ -45,14 +45,18 @@ public class GameSceneC5: GameSceneC {
         planet2.physicsBody?.usesPreciseCollisionDetection = true
         planet2.addChild(gravity2)
         
-        rocket.position = CGPoint (x: -95, y: -247)
+        rocket.position = CGPoint (x: -95, y: -250)
         addChild(rocket)
-        planet1.position = CGPoint (x: -120, y: -93)
+        planet1.position = CGPoint (x: 70, y: -90)
         addChild(planet1)
-        planet2.position = CGPoint (x: 120, y: 77)
+        planet2.position = CGPoint (x: -70, y: 160)
         addChild(planet2)
-        star.position = CGPoint (x: 100, y: 240)
+        star.position = CGPoint (x: 70, y: -20)
         addChild(star)
+        star2.position = CGPoint (x: -70, y: 230)
+        addChild(star2)
+        star3.position = CGPoint (x: -70, y: 90)
+        addChild(star3)
         
         visualGravity!.position = planet1.position
         addChild(visualGravity!)
@@ -61,8 +65,8 @@ public class GameSceneC5: GameSceneC {
     }
     
     override public func setGravity(){
-        gravity.strength = 0.8
-        gravity2.strength = 1
+        gravity.strength = 20
+        gravity2.strength = 20
     }
 }
 
