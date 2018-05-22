@@ -6,6 +6,7 @@ public class GameSceneC: GameScene{
     override public func RocketDidCollideWithStar(rocket: SKSpriteNode, star: SKSpriteNode) {
 
         if numberOfStars == 1 {
+            //last star
             let explosionAction = SKAction.run(){
                 let explosion = SKEmitterNode(fileNamed:"Particles/Confetti")!
                 explosion.position = CGPoint(x: star.position.x, y: star.position.y)
@@ -33,10 +34,11 @@ public class GameSceneC: GameScene{
             }
             self.run(SKAction.sequence([explosionAction, resetScene]))
         }
+        // first stars
         else {
             
             let explosionAction = SKAction.run(){
-                let explosion = SKEmitterNode(fileNamed:"Particles/Confetti")!
+                let explosion = SKEmitterNode(fileNamed:"Particles/MiniConfetti")!
                 explosion.position = CGPoint(x: star.position.x, y: star.position.y)
                 self.addChild(explosion)
                 self.run(SKAction.playSoundFileNamed("Sounds/winSound.wav", waitForCompletion: false))
