@@ -47,9 +47,7 @@ public class GameSceneC: GameScene{
                 }
 
                 star.removeFromParent()
-                
-                print (numberOfStars)
-                
+                //print (numberOfStars)
                 self.run(SKAction.wait(forDuration: 1.3)) {
                     explosion.removeFromParent()
                 }

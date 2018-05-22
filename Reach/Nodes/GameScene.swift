@@ -134,7 +134,6 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
    override public func didMove(to view: SKView){
-
         physicsWorld.gravity = CGVector.zero
         physicsWorld.contactDelegate = self
         

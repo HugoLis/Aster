@@ -1,9 +1,13 @@
-//
-//  YouWonSceneC3.swift
-//  Reach
-//
-//  Created by Hugo Lispector on 21/05/18.
-//  Copyright © 2018 Turma Tarde. All rights reserved.
-//
-
 import Foundation
+import SpriteKit
+
+public class YouWonSceneC3: YouWonScene {
+    
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+        if let gameScene = GameSceneC4(fileNamed: "GameScene"){
+            gameScene.scaleMode = .aspectFill
+            self.view?.presentScene(gameScene, transition: reveal)
+        }
+    }
+}
