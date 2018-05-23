@@ -2,7 +2,7 @@ import SpriteKit
 
 public class GameSceneC5: GameSceneC {
     
-    let planet1 = SKSpriteNode(imageNamed: "globe1")
+    let planet1 = SKSpriteNode(imageNamed: "globe8")
     let planet2 = SKSpriteNode(imageNamed: "globe2")
     
     let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity2")

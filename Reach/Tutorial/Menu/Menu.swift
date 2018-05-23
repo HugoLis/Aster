@@ -114,11 +114,11 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         if value3 == 0{
             if value2 >= 10 || value2 == 0{
                 //lockar orbit run
-                //***orbitButton.removeFromParent()
+                orbitButton.removeFromParent()
                 orbitBlock.position = orbitButton.position
                 orbitBlock.setScale(0.5)
                 orbitBlock.zPosition = 2
-                //***self.addChild(orbitBlock)
+                self.addChild(orbitBlock)
                 //
                 info3.text = "Score less than 10 in Antigravity Run"
                 //            score less than 10 deaths in antigravity run
