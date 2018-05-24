@@ -57,11 +57,23 @@ public class YouWonSceneB6: SKScene {
         if let gameScene = Menu(fileNamed: "GameScene"){
             //save score
             
-            if numberOfDeaths != 0 && (numberOfDeaths < leastDeathsInRun2 || leastDeathsInRun2 == -2){
-                leastDeathsInRun2 = numberOfDeaths
+            if leastDeathsInRun2 == 0 {
+                if numberOfDeaths == 0 {
+                    leastDeathsInRun2 = -1
+                }
+                else {
+                    leastDeathsInRun2 = numberOfDeaths
+                }
             }
-            else if (numberOfDeaths == 0){
-                leastDeathsInRun2 = -1
+            else {
+                if numberOfDeaths == 0{
+                    leastDeathsInRun2 = -1
+                }
+                else {
+                    if numberOfDeaths < leastDeathsInRun2 {
+                        leastDeathsInRun2 = numberOfDeaths
+                    }
+                }
             }
 
             //reset death numbers

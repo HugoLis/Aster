@@ -4,9 +4,9 @@ import Foundation
 
 public var currentRun = 0
 public var numberOfDeaths = 0
-public var leastDeathsInRun1 = -2
-public var leastDeathsInRun2 = -2
-public var leastDeathsInRun3 = -2
+public var leastDeathsInRun1 = 0
+public var leastDeathsInRun2 = 0
+public var leastDeathsInRun3 = 0
 public var numberOfStars = 10
 public var inTransition = false
 
