@@ -75,6 +75,7 @@ public class YouWonSceneC6: SKScene {
                     }
                 }
             }
+            
             //reset death numbers
             numberOfDeaths = 0
             let userDefaults = UserDefaults.standard

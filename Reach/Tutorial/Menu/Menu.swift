@@ -7,8 +7,11 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
     var gravityButton = GravityButton()
     var antigravityButton = AntigravityButton()
     var orbitButton = OrbitButton()
+    var stardustButton = StardustButton()
     let antigravityBlock = SKSpriteNode(imageNamed: "fadedAntigravityRun")
     let orbitBlock = SKSpriteNode(imageNamed: "fadedOrbitRun")
+    let stardustBlock = SKSpriteNode(imageNamed: "fadedStardustRun")
+    
 
     
     override public func didMove(to view: SKView) {
@@ -21,7 +24,7 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         let buttonTexture1: SKTexture = SKTexture(imageNamed:"gravityRun")
         let buttonTextureSelected1: SKTexture = SKTexture(imageNamed:"pressedGravityRun")
         gravityButton = GravityButton(normalTexture: buttonTexture1, selectedTexture: buttonTextureSelected1, disabledTexture: buttonTexture1)
-        gravityButton.position = CGPoint(x: 0 ,y: 100  )
+        gravityButton.position = CGPoint(x: 0 ,y: 140  )
         gravityButton.zPosition = 1
         gravityButton.setScale(0.5)
         self.addChild(gravityButton)
@@ -29,7 +32,7 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         let buttonTexture2: SKTexture = SKTexture(imageNamed:"antigravityRun")
         let buttonTextureSelected2: SKTexture = SKTexture(imageNamed:"pressedAntigravityRun")
         antigravityButton = AntigravityButton(normalTexture: buttonTexture2, selectedTexture: buttonTextureSelected2, disabledTexture: buttonTexture2)
-        antigravityButton.position = CGPoint(x: 0 ,y: 0  )
+        antigravityButton.position = CGPoint(x: 0 ,y: 40  )
         antigravityButton.zPosition = 1
         antigravityButton.setScale(0.5)
         self.addChild(antigravityButton)
@@ -37,17 +40,25 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         let buttonTexture3: SKTexture = SKTexture(imageNamed:"orbitRun")
         let buttonTextureSelected3: SKTexture = SKTexture(imageNamed:"pressedOrbitRun")
         orbitButton = OrbitButton(normalTexture: buttonTexture3, selectedTexture: buttonTextureSelected3, disabledTexture: buttonTexture3)
-        orbitButton.position = CGPoint(x: 0 ,y: -100  )
+        orbitButton.position = CGPoint(x: 0 ,y: -60  )
         orbitButton.zPosition = 1
         orbitButton.setScale(0.5)
         self.addChild(orbitButton)
+        
+        let buttonTexture4: SKTexture = SKTexture(imageNamed:"stardustRun")
+        let buttonTextureSelected4: SKTexture = SKTexture(imageNamed:"pressedStardustRun")
+        stardustButton = StardustButton(normalTexture: buttonTexture4, selectedTexture: buttonTextureSelected4, disabledTexture: buttonTexture4)
+        stardustButton.position = CGPoint(x: 0 ,y: -160  )
+        stardustButton.zPosition = 1
+        stardustButton.setScale(0.5)
+        self.addChild(stardustButton)
 
         
         let topLabel = SKLabelNode(fontNamed: "Futura-Medium")
         topLabel.text = "Choose a run to play"
         topLabel.fontSize = 90
         topLabel.fontColor = SKColor.white
-        topLabel.position = CGPoint(x: 0, y: 200)
+        topLabel.position = CGPoint(x: 0, y: 220)
         topLabel.setScale(0.35)
         self.addChild(topLabel)
         
@@ -55,12 +66,13 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         let value1 = userDefault.integer(forKey: "run1")
         let value2 = userDefault.integer(forKey: "run2")
         let value3 = userDefault.integer(forKey: "run3")
+        let value4 = userDefault.integer(forKey: "run4")
         
         
         let info1 = SKLabelNode(fontNamed: "Futura-Medium")
         info1.fontSize = 60
         info1.fontColor = SKColor.white
-        info1.position = CGPoint(x: 0, y: 60)
+        info1.position = CGPoint(x: 0, y: 100)
         info1.setScale(0.25)
         //0 means no record yet
         if value1 == 0{
@@ -78,7 +90,7 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         let info2 = SKLabelNode(fontNamed: "Futura-Medium")
         info2.fontSize = 60
         info2.fontColor = SKColor.white
-        info2.position = CGPoint(x: 0, y: -40)
+        info2.position = CGPoint(x: 0, y: 0)
         info2.setScale(0.25)
         //0 means no record yet
         if value2 == 0{
@@ -108,7 +120,7 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         let info3 = SKLabelNode(fontNamed: "Futura-Medium")
         info3.fontSize = 60
         info3.fontColor = SKColor.white
-        info3.position = CGPoint(x: 0, y: -140)
+        info3.position = CGPoint(x: 0, y: -100)
         info3.setScale(0.25)
         //0 means no record yet
         if value3 == 0{
@@ -135,15 +147,37 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
             info3.text = "Least deaths: \(value3)"
         }
         self.addChild(info3)
-
-
-
         
-        
-//        fadedRocket.setScale(0.22)
-//        fadedRocket.zRotation = 0.52
-//        fadedRocket.position = CGPoint (x: -100, y: -245)
-//        addChild(fadedRocket)
+        let info4 = SKLabelNode(fontNamed: "Futura-Medium")
+        info4.fontSize = 60
+        info4.fontColor = SKColor.white
+        info4.position = CGPoint(x: 0, y: -200)
+        info4.setScale(0.25)
+        //0 means no record yet
+        if value4 == 0{
+            if value3 >= 10 || value3 == 0{
+                //lockar stardust run
+                stardustButton.removeFromParent()
+                stardustBlock.position = stardustButton.position
+                stardustBlock.setScale(0.5)
+                stardustBlock.zPosition = 2
+                self.addChild(stardustBlock)
+                //
+                info4.text = "Score less than 10 in Orbit Run"
+                //            score less than 10 deaths in antigravity run
+            }
+            else{
+                info4.text = "No best score yet :("
+            }
+        }
+            // -1 means zero deaths
+        else if value4 == -1{
+            info4.text = "Least deaths: 0"
+        }
+        else {
+            info4.text = "Least deaths: \(value4)"
+        }
+        self.addChild(info4)
         
 
     }

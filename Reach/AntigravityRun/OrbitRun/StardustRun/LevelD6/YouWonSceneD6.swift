@@ -1,7 +1,7 @@
 import Foundation
 import SpriteKit
 
-public class YouWonScene6: SKScene {
+public class YouWonSceneD6: SKScene {
     
     let star = SKSpriteNode(imageNamed: "star")
     let starField = SKEmitterNode(fileNamed:"Particles/Stars")
@@ -32,7 +32,7 @@ public class YouWonScene6: SKScene {
         addChild(starField!)
         
         let label1 = SKLabelNode(fontNamed: "Futura-Medium")
-        label1.text = "You won Gravity Run!"
+        label1.text = "You won Stardust Run!"
         label1.fontSize = 140
         label1.fontColor = SKColor.white
         label1.position = CGPoint(x: size.width/2, y: size.height/2 + 180)
@@ -56,30 +56,31 @@ public class YouWonScene6: SKScene {
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
         if let gameScene = Menu(fileNamed: "GameScene"){
             //save score
-
-            if leastDeathsInRun1 == 0 {
+            
+            if leastDeathsInRun4 == 0 {
                 if numberOfDeaths == 0 {
-                    leastDeathsInRun1 = -1
+                    leastDeathsInRun4 = -1
                 }
                 else {
-                    leastDeathsInRun1 = numberOfDeaths
+                    leastDeathsInRun4 = numberOfDeaths
                 }
             }
             else {
                 if numberOfDeaths == 0{
-                    leastDeathsInRun1 = -1
+                    leastDeathsInRun4 = -1
                 }
                 else {
-                    if numberOfDeaths < leastDeathsInRun1 {
-                        leastDeathsInRun1 = numberOfDeaths
+                    if numberOfDeaths < leastDeathsInRun4 {
+                        leastDeathsInRun4 = numberOfDeaths
                     }
                 }
             }
 
+            
             //reset death numbers
             numberOfDeaths = 0
             let userDefaults = UserDefaults.standard
-            userDefaults.set(leastDeathsInRun1, forKey: "run1")
+            userDefaults.set(leastDeathsInRun4, forKey: "run4")
             
             gameScene.scaleMode = .aspectFill
             self.view?.presentScene(gameScene, transition: reveal)

@@ -263,14 +263,18 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         let value1 = userDefault.integer(forKey: "run1")
         let value2 = userDefault.integer(forKey: "run2")
         let value3 = userDefault.integer(forKey: "run3")
+        let value4 = userDefault.integer(forKey: "run4")
+
     
         switch currentRun {
             case 1:
                 bestScoreMethod(value: value1)
             case 2:
                 bestScoreMethod(value: value2)
-            default:
+            case 3:
                 bestScoreMethod(value: value3)
+            default:
+                bestScoreMethod(value: value4)
         }
     }
     

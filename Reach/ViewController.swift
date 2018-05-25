@@ -7,8 +7,10 @@ public var numberOfDeaths = 0
 public var leastDeathsInRun1 = 0
 public var leastDeathsInRun2 = 0
 public var leastDeathsInRun3 = 0
+public var leastDeathsInRun4 = 0
 public var numberOfStars = 10
 public var inTransition = false
+//public var isCollidingWithStar = false
 
 class ViewController: UIViewController {
 
