@@ -55,6 +55,11 @@ public class YouWonSceneD6: SKScene {
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
         if let gameScene = Menu(fileNamed: "GameScene"){
+            
+            let userDefault = UserDefaults.standard
+            let value4 = userDefault.integer(forKey: "run4")
+            leastDeathsInRun4 = value4
+            
             //save score
             
             if leastDeathsInRun4 == 0 {

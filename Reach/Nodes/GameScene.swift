@@ -6,12 +6,14 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     public var gravity = SKFieldNode.radialGravityField()
     public var gravity2 = SKFieldNode.radialGravityField()
     public var gravity3 = SKFieldNode.radialGravityField()
+    public var gravity4 = SKFieldNode.radialGravityField()
     let thrustSound = SKAudioNode(fileNamed: "Sounds/rocketThrust.wav")
     let fire = SKEmitterNode(fileNamed:"Particles/Fire")
     
     let star = SKSpriteNode(imageNamed: "star")
     let star2 = SKSpriteNode(imageNamed: "star")
     let star3 = SKSpriteNode(imageNamed: "star")
+    let star4 = SKSpriteNode(imageNamed: "star")
     var button = Button()
     var backToMenu = MenuButton()
     let explosion = SKEmitterNode(fileNamed: "Particles/Explosion")
@@ -69,13 +71,17 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     
     public func RocketDidCollideWithPlanet(rocket: SKSpriteNode, planet: SKSpriteNode) {
         
-        numberOfDeaths += 1
-        
+        //***
+
         let explosionAction = SKAction.run(){
             let explosion = SKEmitterNode(fileNamed:"Particles/Explosion")!
             explosion.position = CGPoint(x: rocket.position.x, y: rocket.position.y)
             self.addChild(explosion)
             self.run(SKAction.playSoundFileNamed("Sounds/rocketCrash.wav", waitForCompletion: false))
+            
+            if ((rocket.parent) != nil) {
+                numberOfDeaths = numberOfDeaths + 1
+            }
             
             rocket.removeFromParent()
             
@@ -132,8 +138,11 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     public func RocketDidCollideWithEdge(rocket: SKSpriteNode, edge: SKSpriteNode) {
+        //***
+        if ((rocket.parent) != nil) {
+            numberOfDeaths = numberOfDeaths + 1
+        }
         rocket.removeFromParent()
-        numberOfDeaths += 1
         self.resetScene()
     }
     
@@ -178,6 +187,14 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         star3.physicsBody?.contactTestBitMask = PhysicsCategory.Rocket
         star3.physicsBody?.collisionBitMask = PhysicsCategory.None
         star3.physicsBody?.usesPreciseCollisionDetection = true
+    
+        star4.setScale(0.4)
+        star4.physicsBody = SKPhysicsBody(texture: star.texture!, size: star.size)
+        star4.physicsBody?.isDynamic = false
+        star4.physicsBody?.categoryBitMask = PhysicsCategory.Star
+        star4.physicsBody?.contactTestBitMask = PhysicsCategory.Rocket
+        star4.physicsBody?.collisionBitMask = PhysicsCategory.None
+        star4.physicsBody?.usesPreciseCollisionDetection = true
 
     
         starField!.position = CGPoint(x: 0, y: 0)
@@ -190,6 +207,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         gravity2.categoryBitMask = PhysicsCategory.Gravity
         gravity3.strength = 0
         gravity3.categoryBitMask = PhysicsCategory.Gravity
+        gravity4.strength = 0
+        gravity4.categoryBitMask = PhysicsCategory.Gravity
 
     
         //leftWall.position = CGPoint(x: -325, y: 0)

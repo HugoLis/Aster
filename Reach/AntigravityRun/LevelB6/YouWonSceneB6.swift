@@ -57,6 +57,11 @@ public class YouWonSceneB6: SKScene {
         if let gameScene = Menu(fileNamed: "GameScene"){
             //save score
             
+            let userDefault = UserDefaults.standard
+            let value2 = userDefault.integer(forKey: "run2")
+            leastDeathsInRun2 = value2
+
+            
             if leastDeathsInRun2 == 0 {
                 if numberOfDeaths == 0 {
                     leastDeathsInRun2 = -1

@@ -4,7 +4,7 @@ public class GameSceneC3: GameSceneC {
     
     let planet1 = SKSpriteNode(imageNamed: "globe3")
     let planet2 = SKSpriteNode(imageNamed: "globe4")
-    
+
     let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity6")
     let visualGravity2 = SKEmitterNode (fileNamed:"Particles/VisualGravity6")
     

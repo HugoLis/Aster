@@ -78,14 +78,14 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         if value1 == 0{
             info1.text = "No best score yet :("
         }
-            // -1 means zero deaths
+        // -1 means zero deaths
         else if value1 == -1{
             info1.text = "Least deaths: 0"
         }
         else {
             info1.text = "Least deaths: \(value1)"
         }
-        self.addChild(info1)
+        //self.addChild(info1)
         
         let info2 = SKLabelNode(fontNamed: "Futura-Medium")
         info2.fontSize = 60
@@ -94,28 +94,16 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         info2.setScale(0.25)
         //0 means no record yet
         if value2 == 0{
-            if value1 >= 10 || value1 == 0{
-                //lockar antigravity run
-                antigravityButton.removeFromParent()
-                antigravityBlock.position = antigravityButton.position
-                antigravityBlock.setScale(0.5)
-                antigravityBlock.zPosition = 2
-                self.addChild(antigravityBlock)
-                //
-                info2.text = "Score less than 10 in Gravity Run"
-            }
-            else{
-                info2.text = "No best score yet :("
-            }
+            info2.text = "No best score yet :("
         }
-            // -1 means zero deaths
+        // -1 means zero deaths
         else if value2 == -1{
             info2.text = "Least deaths: 0"
         }
         else {
             info2.text = "Least deaths: \(value2)"
         }
-        self.addChild(info2)
+        //self.addChild(info2)
         
         let info3 = SKLabelNode(fontNamed: "Futura-Medium")
         info3.fontSize = 60
@@ -124,30 +112,17 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         info3.setScale(0.25)
         //0 means no record yet
         if value3 == 0{
-            if value2 >= 10 || value2 == 0{
-                //lockar orbit run
-                orbitButton.removeFromParent()
-                orbitBlock.position = orbitButton.position
-                orbitBlock.setScale(0.5)
-                orbitBlock.zPosition = 2
-                self.addChild(orbitBlock)
-                //
-                info3.text = "Score less than 10 in Antigravity Run"
-                //            score less than 10 deaths in antigravity run
-            }
-            else{
-                info3.text = "No best score yet :("
-            }
+            info3.text = "No best score yet :("
         }
-            // -1 means zero deaths
+        // -1 means zero deaths
         else if value3 == -1{
             info3.text = "Least deaths: 0"
         }
         else {
             info3.text = "Least deaths: \(value3)"
         }
-        self.addChild(info3)
-        
+        //self.addChild(info3)
+
         let info4 = SKLabelNode(fontNamed: "Futura-Medium")
         info4.fontSize = 60
         info4.fontColor = SKColor.white
@@ -155,20 +130,7 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         info4.setScale(0.25)
         //0 means no record yet
         if value4 == 0{
-            if value3 >= 10 || value3 == 0{
-                //lockar stardust run
-                stardustButton.removeFromParent()
-                stardustBlock.position = stardustButton.position
-                stardustBlock.setScale(0.5)
-                stardustBlock.zPosition = 2
-                self.addChild(stardustBlock)
-                //
-                info4.text = "Score less than 10 in Orbit Run"
-                //            score less than 10 deaths in antigravity run
-            }
-            else{
-                info4.text = "No best score yet :("
-            }
+            info4.text = "No best score yet :("
         }
             // -1 means zero deaths
         else if value4 == -1{
@@ -177,8 +139,42 @@ public class Menu: SKScene, SKPhysicsContactDelegate {
         else {
             info4.text = "Least deaths: \(value4)"
         }
-        self.addChild(info4)
+        //self.addChild(info4)
+
+
         
+        //Lock2
+        if value1 == 0 || value1 > 9{
+            antigravityButton.removeFromParent()
+            antigravityBlock.position = antigravityButton.position
+            antigravityBlock.setScale(0.5)
+            antigravityBlock.zPosition = 2
+            self.addChild(antigravityBlock)
+            info2.text = "Score less than 10 in Gravity Run"
+        }
+        //Lock3
+        if value2 == 0 || value2 > 9{
+            orbitButton.removeFromParent()
+            orbitBlock.position = orbitButton.position
+            orbitBlock.setScale(0.5)
+            orbitBlock.zPosition = 2
+            self.addChild(orbitBlock)
+            info3.text = "Score less than 10 in Antigravity Run"
+        }
+        //lock4
+        if value3 == 0 || value3 > 9{
+            stardustButton.removeFromParent()
+            stardustBlock.position = stardustButton.position
+            stardustBlock.setScale(0.5)
+            stardustBlock.zPosition = 2
+            self.addChild(stardustBlock)
+            info4.text = "Score less than 10 in Orbit Run"
+        }
+
+        self.addChild(info1)
+        self.addChild(info2)
+        self.addChild(info3)
+        self.addChild(info4)
 
     }
     
