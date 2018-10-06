@@ -28,7 +28,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
         arrow1.zPosition = -20
         self.addChild(arrow1)
         
-        let text1 = SKLabelNode(fontNamed: "Helvetica")
+        let text1 = SKLabelNode(fontNamed: "Futura-Medium")
         text1.text = "Capture the star"
         text1.fontSize = 80
         text1.fontColor = SKColor.white
@@ -80,7 +80,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             arrow2.setScale(0.75)
             self.addChild(arrow2)
             
-            let text2 = SKLabelNode(fontNamed: "Helvetica")
+            let text2 = SKLabelNode(fontNamed: "Futura-Medium")
             text2.text = "Use the gravity of planets"
             text2.fontSize = 80
             text2.fontColor = SKColor.white
@@ -88,7 +88,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             text2.setScale(0.35)
             arrow2.addChild(text2)
             
-            let text22 = SKLabelNode(fontNamed: "Helvetica")
+            let text22 = SKLabelNode(fontNamed: "Futura-Medium")
             text22.text = "but don't hit them!"
             text22.fontSize = 80
             text22.fontColor = SKColor.white
@@ -126,7 +126,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             arrow3.setScale(0.75)
             self.addChild(arrow3)
             
-            let text3 = SKLabelNode(fontNamed: "Helvetica")
+            let text3 = SKLabelNode(fontNamed: "Futura-Medium")
             text3.text = "Press and hold then release"
             text3.fontSize = 80
             text3.fontColor = SKColor.white
@@ -134,7 +134,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             text3.setScale(0.35)
             arrow3.addChild(text3)
             
-            let text33 = SKLabelNode(fontNamed: "Helvetica")
+            let text33 = SKLabelNode(fontNamed: "Futura-Medium")
             text33.text = "(as many times as you need)"
             text33.fontSize = 60
             text33.fontColor = SKColor.white
