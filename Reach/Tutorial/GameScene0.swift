@@ -115,7 +115,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             
             button.setScale(0.55)
             button.position = CGPoint(x: 115 ,y: -235)
-            addChild(button)
+            //addChild(button)
             
             rocket.setScale(0.22)
             rocket.zRotation = 0.52
@@ -124,7 +124,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             
             arrow3.position = CGPoint(x:90, y:-188)
             arrow3.setScale(0.75)
-            self.addChild(arrow3)
+            //self.addChild(arrow3)
             
             let text3 = SKLabelNode(fontNamed: "Futura-Medium")
             text3.text = "Press and hold then release"
@@ -132,7 +132,7 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             text3.fontColor = SKColor.white
             text3.position = CGPoint(x: -100, y: 60)
             text3.setScale(0.35)
-            arrow3.addChild(text3)
+            //arrow3.addChild(text3)
             
             let text33 = SKLabelNode(fontNamed: "Futura-Medium")
             text33.text = "(as many times as you need)"
@@ -140,7 +140,42 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
             text33.fontColor = SKColor.white
             text33.position = CGPoint(x: -100, y: 35)
             text33.setScale(0.35)
-            arrow3.addChild(text33)
+            //arrow3.addChild(text33)
+            
+            switch deviceType {
+            //case 1:
+            case 2:
+                arrow3.xScale = -1
+                arrow3.position = CGPoint (x: 30, y: -288)
+                button.position = CGPoint(x: 10 ,y: -340)
+                button.setScale(0.6)
+                text3.position = CGPoint(x: (-30+100), y: (-291+60))
+                text3.setScale(0.2625)
+                text33.position = CGPoint(x: (-30+100), y: (-291+35))
+                text33.setScale(0.2625)
+                self.addChild(arrow3)
+                self.addChild(text3)
+                self.addChild(text33)
+            case 3: //case 3
+                arrow3.xScale = -1
+                arrow3.position = CGPoint (x: 30, y: -38)
+                button.position = CGPoint(x: 10 ,y: -360)
+                button.setScale(0.65)
+                text3.position = CGPoint(x: (-30+100), y: (-41+60))
+                text3.setScale(0.2625)
+                text33.position = CGPoint(x: (-30+100), y: (-41+35))
+                text33.setScale(0.2625)
+                self.addChild(arrow3)
+                self.addChild(text3)
+                self.addChild(text33)
+            default:
+                button.position = CGPoint(x: 115 ,y: -235)
+                self.addChild(arrow3)
+                arrow3.addChild(text3)
+                arrow3.addChild(text33)
+            }
+            addChild(button)
+
 
         }
         

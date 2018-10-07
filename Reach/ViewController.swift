@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     let width = UIScreen.main.bounds.maxX
     let height = UIScreen.main.bounds.maxY
     deviceType = defineDevice(width: width, height: height)
-    print (deviceType)
+    //print (deviceType)
     
     
     //self.view.addSubview(UIView())
