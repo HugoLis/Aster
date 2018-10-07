@@ -52,6 +52,8 @@
 		9A2CC20F20B119D2003E7263 /* GravityRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2CC20E20B119D2003E7263 /* GravityRun.swift */; };
 		9A2CC21120B11C2A003E7263 /* AntigravityRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2CC21020B11C2A003E7263 /* AntigravityRun.swift */; };
 		9A2CC21320B11C51003E7263 /* OrbitRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2CC21220B11C51003E7263 /* OrbitRun.swift */; };
+		9A34F50021695706005AF3F0 /* GameScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A34F4FF21695706005AF3F0 /* GameScene2.sks */; };
+		9A34F50221695769005AF3F0 /* GameScene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A34F50121695769005AF3F0 /* GameScene3.sks */; };
 		9AB4D02020B3359D00F0587A /* GameSceneC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4D01F20B3359D00F0587A /* GameSceneC2.swift */; };
 		9AB4D02220B335AD00F0587A /* YouWonSceneC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4D02120B335AD00F0587A /* YouWonSceneC2.swift */; };
 		9AB4D02420B335C300F0587A /* GameSceneC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4D02320B335C300F0587A /* GameSceneC3.swift */; };
@@ -159,6 +161,8 @@
 		9A2CC20E20B119D2003E7263 /* GravityRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityRun.swift; sourceTree = "<group>"; };
 		9A2CC21020B11C2A003E7263 /* AntigravityRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntigravityRun.swift; sourceTree = "<group>"; };
 		9A2CC21220B11C51003E7263 /* OrbitRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitRun.swift; sourceTree = "<group>"; };
+		9A34F4FF21695706005AF3F0 /* GameScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene2.sks; sourceTree = "<group>"; };
+		9A34F50121695769005AF3F0 /* GameScene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene3.sks; sourceTree = "<group>"; };
 		9AB4D01F20B3359D00F0587A /* GameSceneC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneC2.swift; sourceTree = "<group>"; };
 		9AB4D02120B335AD00F0587A /* YouWonSceneC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWonSceneC2.swift; sourceTree = "<group>"; };
 		9AB4D02320B335C300F0587A /* GameSceneC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneC3.swift; sourceTree = "<group>"; };
@@ -288,6 +292,8 @@
 				48DBE1DF207402400096E1DF /* Actions.sks */,
 				48DBE1E1207402400096E1DF /* Button */,
 				48DBE1E2207402400096E1DF /* GameScene.sks */,
+				9A34F4FF21695706005AF3F0 /* GameScene2.sks */,
+				9A34F50121695769005AF3F0 /* GameScene3.sks */,
 				48DBE1E5207402410096E1DF /* Intro */,
 				48DBE1E3207402400096E1DF /* Particles */,
 				48DBE1E8207402410096E1DF /* Planets */,
@@ -729,11 +735,13 @@
 			files = (
 				48DBE1F2207402410096E1DF /* StarCounter in Resources */,
 				48DBE1EA207402410096E1DF /* Actions.sks in Resources */,
+				9A34F50021695706005AF3F0 /* GameScene2.sks in Resources */,
 				48DBE1EF207402410096E1DF /* spark.png in Resources */,
 				48DBE1F1207402410096E1DF /* Star in Resources */,
 				48D9005A2073EE70008F5CE1 /* LaunchScreen.storyboard in Resources */,
 				48D900572073EE70008F5CE1 /* Assets.xcassets in Resources */,
 				48DBE1ED207402410096E1DF /* GameScene.sks in Resources */,
+				9A34F50221695769005AF3F0 /* GameScene3.sks in Resources */,
 				48DBE1EB207402410096E1DF /* Rocket in Resources */,
 				48DBE1EE207402410096E1DF /* Particles in Resources */,
 				48DBE1EC207402410096E1DF /* Button in Resources */,
@@ -999,7 +1007,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AD2MZY3MHY;
@@ -1010,7 +1018,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1018,7 +1026,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AD2MZY3MHY;
@@ -1029,7 +1037,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

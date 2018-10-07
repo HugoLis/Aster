@@ -10,6 +10,9 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     let thrustSound = SKAudioNode(fileNamed: "Sounds/rocketThrust.wav")
     let fire = SKEmitterNode(fileNamed:"Particles/Fire")
     
+    var width: CGFloat?
+    var height: CGFloat?
+    
     let star = SKSpriteNode(imageNamed: "star")
     let star2 = SKSpriteNode(imageNamed: "star")
     let star3 = SKSpriteNode(imageNamed: "star")
@@ -19,8 +22,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     let explosion = SKEmitterNode(fileNamed: "Particles/Explosion")
     let starField = SKEmitterNode(fileNamed:"Particles/Stars")
     
-    let leftWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 50, height: 760))
-    let rightWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 50, height: 760))
+    let leftWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 50, height: 960))
+    let rightWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 50, height: 960))
     let topWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 600, height: 50))
     let bottomWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 600, height: 50))
     public let defaultSize = CGSize(width: 480, height: 640)
@@ -147,6 +150,10 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
    override public func didMove(to view: SKView){
+    
+        width = UIScreen.main.bounds.maxX
+        height = UIScreen.main.bounds.maxY
+        //print(width!, height!)
         physicsWorld.gravity = CGVector.zero
         physicsWorld.contactDelegate = self
         
@@ -159,6 +166,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         rocket.physicsBody?.fieldBitMask = PhysicsCategory.Gravity
         rocket.physicsBody?.collisionBitMask = PhysicsCategory.None
         rocket.physicsBody?.friction = 0
+    
     
         rocket.physicsBody?.usesPreciseCollisionDetection = true
         rocket.physicsBody!.mass = 0.1
@@ -257,15 +265,15 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         backToMenu.position = CGPoint(x: 0 ,y: 305)
         backToMenu.zPosition = 10
         backToMenu.setScale(0.35)
-        self.addChild(backToMenu)
+        //self.addChild(backToMenu)
     
         let buttonTexture: SKTexture = SKTexture(imageNamed:"redButton")
         let buttonTextureSelected: SKTexture = SKTexture(imageNamed:"pressedButton")
         button = Button(normalTexture: buttonTexture, selectedTexture: buttonTextureSelected, disabledTexture: buttonTexture)
-        button.position = CGPoint(x: 115 ,y: -245  )
+        button.position = CGPoint(x: 115 ,y: -245)
         button.zPosition = 1
         button.setScale(0.55)
-        self.addChild(button)
+        //self.addChild(button)
     
         fire!.position = CGPoint (x: 1, y: -90)
         explosion!.position = CGPoint (x: 0, y: 50)
@@ -274,9 +282,38 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         currentDeaths.text = "Deaths: \(numberOfDeaths)"
         currentDeaths.fontSize = 40
         currentDeaths.fontColor = SKColor.white
+        //currentDeaths.position = CGPoint(x: -185, y: 300)
         currentDeaths.position = CGPoint(x: -185, y: 300)
         currentDeaths.setScale(0.35)
+        //self.addChild(currentDeaths)
+    
+    
+    switch deviceType {
+    case 1:
+        backToMenu.position = CGPoint(x: 0 ,y: 305)
+        currentDeaths.position = CGPoint(x: -185, y: 300)
+        button.position = CGPoint(x: 115 ,y: -245)
+    case 2:
+        backToMenu.position = CGPoint(x: 0 ,y: self.frame.height/2 - 20)
+        backToMenu.setScale(0.45)
+        currentDeaths.position = CGPoint(x: -160, y: self.frame.height/2 - 27)
+        currentDeaths.setScale(0.45)
+        //button.position = CGPoint(x: 115 ,y: -245)
+        button.position = CGPoint(x: 0 ,y: -340)
+        button.setScale(0.6)
+    default:
+        backToMenu.position = CGPoint(x: 0 ,y: self.frame.height/2 - 60)
+        backToMenu.setScale(0.5)
+        currentDeaths.position = CGPoint(x: -150 ,y: self.frame.height/2 - 65)
+        currentDeaths.setScale(0.5)
+        button.position = CGPoint(x: 0 ,y: -360)
+        button.setScale(0.65)
+
+    }
+        self.addChild(backToMenu)
+        self.addChild(button)
         self.addChild(currentDeaths)
+
     
         let userDefault = UserDefaults.standard
         let value1 = userDefault.integer(forKey: "run1")
@@ -316,7 +353,21 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         leastDeaths.fontColor = SKColor.white
         leastDeaths.position = CGPoint(x: 170, y: 300)
         leastDeaths.setScale(0.35)
+
+        
+        switch deviceType {
+        case 1:
+            leastDeaths.position = CGPoint(x: 170, y: 300)
+        case 2:
+            leastDeaths.position = CGPoint(x: 145, y: self.frame.height/2 - 27)
+            leastDeaths.setScale(0.45)
+        default:
+            leastDeaths.position = CGPoint(x: 135, y: self.frame.height/2 - 65)
+            leastDeaths.setScale(0.5)
+        }
+        
         self.addChild(leastDeaths)
+        
 
     }
     

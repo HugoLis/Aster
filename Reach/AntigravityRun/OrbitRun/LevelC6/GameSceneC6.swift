@@ -43,6 +43,7 @@ public class GameSceneC6: GameSceneC {
                     let reveal = SKTransition.fade(withDuration: 1)
                     let gameSize = self.size
                     let youWonScene = YouWonSceneC6(size:gameSize)
+                    youWonScene.scaleMode = .aspectFill
                     self.view?.presentScene(youWonScene, transition: reveal)
                 })
             }

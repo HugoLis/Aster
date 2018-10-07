@@ -37,6 +37,7 @@ public class GameSceneB6: GameScene {
                 let reveal = SKTransition.fade(withDuration: 1)
                 let gameSize = self.size
                 let youWonScene = YouWonSceneB6(size:gameSize)
+                youWonScene.scaleMode = .aspectFill
                 self.view?.presentScene(youWonScene, transition: reveal)
             })
         }

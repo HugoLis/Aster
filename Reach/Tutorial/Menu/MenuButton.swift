@@ -9,10 +9,13 @@ public class MenuButton: RunButton {
             numberOfDeaths = 0
             let parentNode = self.parent as! GameScene
             let reveal = SKTransition.doorsCloseHorizontal(withDuration: 0.75)
+            
             if let gameScene = Menu(fileNamed: "GameScene"){
                 gameScene.scaleMode = .aspectFill
                 parentNode.self.view?.presentScene(gameScene, transition: reveal)
             }
+            
+            
         }
     }
     

@@ -146,10 +146,26 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
         
         if tapCount == 2 {
             let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-            if let gameScene = GameScene1(fileNamed: "GameScene"){
-                gameScene.scaleMode = .aspectFill
-                self.view?.presentScene(gameScene, transition: reveal)
+            
+            switch deviceType {
+            case 1:
+                if let gameScene = GameScene1(fileNamed: "GameScene"){
+                    gameScene.scaleMode = .aspectFill
+                    self.view?.presentScene(gameScene, transition: reveal)
+                }
+            case 2:
+                if let gameScene = GameScene1(fileNamed: "GameScene2"){
+                    gameScene.scaleMode = .aspectFill
+                    self.view?.presentScene(gameScene, transition: reveal)
+                }
+            default: //case 3
+                if let gameScene = GameScene1(fileNamed: "GameScene3"){
+                    gameScene.scaleMode = .aspectFill
+                    self.view?.presentScene(gameScene, transition: reveal)
+                }
             }
+            
+            
         }
         tapCount = tapCount + 1
     }

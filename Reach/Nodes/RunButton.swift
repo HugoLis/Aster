@@ -81,7 +81,7 @@ public class RunButton: SKSpriteNode {
         //action here:
 
         //DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-        self.startRun()
+        
         //})
         
     }
@@ -93,6 +93,16 @@ public class RunButton: SKSpriteNode {
         }
         isSelected = false
         
+        self.startRun()
+        
+    }
+    
+    override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (!isEnabled) {
+            return
+        }
+        isSelected = false
     }
     
 }
+
