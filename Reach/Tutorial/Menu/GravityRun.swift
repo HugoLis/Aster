@@ -16,7 +16,7 @@ public class GravityButton: RunButton {
         let reveal = SKTransition.doorway(withDuration: 1)
         if wasShown==1 {
             //
-            switch deviceType {
+        switch deviceType {
             case 1:
                 if let gameScene = GameScene1(fileNamed: "GameScene"){
                     gameScene.scaleMode = .aspectFill
@@ -32,7 +32,7 @@ public class GravityButton: RunButton {
                     gameScene.scaleMode = .aspectFill
                     parentNode.self.view?.presentScene(gameScene, transition: reveal)
                 }
-            }
+        }
             
             
             //

@@ -25,15 +25,14 @@ public class GameScene1: GameScene {
                 self.view?.presentScene(gameScene, transition: reveal)
             }
         }
-        
-        
-
     }
     
     override public func loadNextScene(size: CGSize){
         //youWonScene = YouWonScene1(size: size)
         switch deviceType {
         case 1:
+            youWonScene = YouWonScene1(size: CGSize(width: 480, height: 640))
+        case 2:
             youWonScene = YouWonScene1(size: CGSize(width: 480, height: 640))
         default:
             youWonScene = YouWonScene1(size: CGSize(width: 450, height: 800))

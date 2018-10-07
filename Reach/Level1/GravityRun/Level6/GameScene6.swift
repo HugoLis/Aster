@@ -10,9 +10,23 @@ public class GameScene6: GameScene {
     
     override func resetScene () {
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-        if let gameScene = GameScene6(fileNamed: "GameScene"){
-            gameScene.scaleMode = .aspectFill
-            self.view?.presentScene(gameScene, transition: reveal)
+        
+        switch deviceType {
+        case 1:
+            if let gameScene = GameScene6(fileNamed: "GameScene"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
+        case 2:
+            if let gameScene = GameScene6(fileNamed: "GameScene2"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
+        default: //case 3
+            if let gameScene = GameScene6(fileNamed: "GameScene3"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
         }
     }
     
@@ -35,7 +49,17 @@ public class GameScene6: GameScene {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 let reveal = SKTransition.fade(withDuration: 1)
                 let gameSize = self.size
-                let youWonScene = YouWonScene6(size:gameSize)
+                
+                var youWonScene = YouWonScene6(size:gameSize)
+                switch deviceType {
+                case 1:
+                    youWonScene = YouWonScene6(size: CGSize(width: 480, height: 640))
+                case 2:
+                    youWonScene = YouWonScene6(size: CGSize(width: 450, height: 800))
+                default:
+                    youWonScene = YouWonScene6(size: CGSize(width: 468.73, height: 1015))
+                }
+
                 youWonScene.scaleMode = .aspectFill
                 self.view?.presentScene(youWonScene, transition: reveal)
             })

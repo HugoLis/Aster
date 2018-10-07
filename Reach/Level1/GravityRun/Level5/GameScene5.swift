@@ -5,16 +5,37 @@ public class GameScene5: GameScene {
     let planet1 = SKSpriteNode(imageNamed: "globe6")
     let visualGravity = SKEmitterNode(fileNamed:"Particles/VisualGravity3")
     
-    override func resetScene () {
+    override func resetScene(){
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-        if let gameScene = GameScene5(fileNamed: "GameScene"){
-            gameScene.scaleMode = .aspectFill
-            self.view?.presentScene(gameScene, transition: reveal)
+        switch deviceType {
+        case 1:
+            if let gameScene = GameScene5(fileNamed: "GameScene"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
+        case 2:
+            if let gameScene = GameScene5(fileNamed: "GameScene2"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
+        default: //case 3
+            if let gameScene = GameScene5(fileNamed: "GameScene3"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
         }
     }
-    
     override public func loadNextScene(size: CGSize){
-        youWonScene = YouWonScene5(size: size)
+        
+        switch deviceType {
+        case 1:
+            youWonScene = YouWonScene5(size: CGSize(width: 480, height: 640))
+        case 2:
+            youWonScene = YouWonScene5(size: CGSize(width: 480, height: 640))
+        default:
+            youWonScene = YouWonScene5(size: CGSize(width: 450, height: 800))
+        }
+        //youWonScene = YouWonScene5(size: size)
         youWonScene.starCount = SKSpriteNode(imageNamed: "5-6stars")
     }
     

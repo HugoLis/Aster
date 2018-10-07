@@ -12,9 +12,22 @@ public class GameSceneD6: GameSceneC {
     
     override func resetScene () {
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-        if let gameScene = GameSceneD6(fileNamed: "GameScene"){
-            gameScene.scaleMode = .aspectFill
-            self.view?.presentScene(gameScene, transition: reveal)
+        switch deviceType {
+        case 1:
+            if let gameScene = GameSceneD6(fileNamed: "GameScene"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
+        case 2:
+            if let gameScene = GameSceneD6(fileNamed: "GameScene2"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
+        default: //case 3
+            if let gameScene = GameSceneD6(fileNamed: "GameScene3"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
         }
     }
     
@@ -42,7 +55,17 @@ public class GameSceneD6: GameSceneC {
                     inTransition = false
                     let reveal = SKTransition.fade(withDuration: 1)
                     let gameSize = self.size
-                    let youWonScene = YouWonSceneD6(size:gameSize)
+                    var youWonScene = YouWonSceneD6(size:gameSize)
+                    switch deviceType {
+                    case 1:
+                        youWonScene = YouWonSceneD6(size: CGSize(width: 480, height: 640))
+                    case 2:
+                        youWonScene = YouWonSceneD6(size: CGSize(width: 450, height: 800))
+                    default:
+                        youWonScene = YouWonSceneD6(size: CGSize(width: 468.73, height: 1015))
+                    }
+                    
+                    
                     youWonScene.scaleMode = .aspectFill
                     self.view?.presentScene(youWonScene, transition: reveal)
                 })

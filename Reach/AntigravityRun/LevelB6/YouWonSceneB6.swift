@@ -54,40 +54,83 @@ public class YouWonSceneB6: SKScene {
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-        if let gameScene = Menu(fileNamed: "GameScene"){
-            //save score
-            
-            let userDefault = UserDefaults.standard
-            let value2 = userDefault.integer(forKey: "run2")
-            leastDeathsInRun2 = value2
-
-            
-            if leastDeathsInRun2 == 0 {
-                if numberOfDeaths == 0 {
-                    leastDeathsInRun2 = -1
-                }
-                else {
-                    leastDeathsInRun2 = numberOfDeaths
-                }
-            }
-            else {
-                if numberOfDeaths == 0{
-                    leastDeathsInRun2 = -1
-                }
-                else {
-                    if numberOfDeaths < leastDeathsInRun2 {
+        
+        switch deviceType {
+        case 3:
+            if let gameScene = Menu(fileNamed: "GameScene2"){
+                //save score
+                
+                let userDefault = UserDefaults.standard
+                let value2 = userDefault.integer(forKey: "run2")
+                leastDeathsInRun2 = value2
+                
+                
+                if leastDeathsInRun2 == 0 {
+                    if numberOfDeaths == 0 {
+                        leastDeathsInRun2 = -1
+                    }
+                    else {
                         leastDeathsInRun2 = numberOfDeaths
                     }
                 }
+                else {
+                    if numberOfDeaths == 0{
+                        leastDeathsInRun2 = -1
+                    }
+                    else {
+                        if numberOfDeaths < leastDeathsInRun2 {
+                            leastDeathsInRun2 = numberOfDeaths
+                        }
+                    }
+                }
+                
+                //reset death numbers
+                numberOfDeaths = 0
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(leastDeathsInRun2, forKey: "run2")
+                
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
             }
-
-            //reset death numbers
-            numberOfDeaths = 0
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(leastDeathsInRun2, forKey: "run2")
-            
-            gameScene.scaleMode = .aspectFill
-            self.view?.presentScene(gameScene, transition: reveal)
+        default:
+            if let gameScene = Menu(fileNamed: "GameScene"){
+                //save score
+                
+                let userDefault = UserDefaults.standard
+                let value2 = userDefault.integer(forKey: "run2")
+                leastDeathsInRun2 = value2
+                
+                
+                if leastDeathsInRun2 == 0 {
+                    if numberOfDeaths == 0 {
+                        leastDeathsInRun2 = -1
+                    }
+                    else {
+                        leastDeathsInRun2 = numberOfDeaths
+                    }
+                }
+                else {
+                    if numberOfDeaths == 0{
+                        leastDeathsInRun2 = -1
+                    }
+                    else {
+                        if numberOfDeaths < leastDeathsInRun2 {
+                            leastDeathsInRun2 = numberOfDeaths
+                        }
+                    }
+                }
+                
+                //reset death numbers
+                numberOfDeaths = 0
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(leastDeathsInRun2, forKey: "run2")
+                
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
         }
+        
+        
+
     }
 }

@@ -7,14 +7,36 @@ public class GameSceneB1: GameScene {
     
     override func resetScene() {
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-        if let gameScene = GameSceneB1(fileNamed: "GameScene"){
-            gameScene.scaleMode = .aspectFill
-            self.view?.presentScene(gameScene, transition: reveal)
+        switch deviceType {
+        case 1:
+            if let gameScene = GameSceneB1(fileNamed: "GameScene"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
+        case 2:
+            if let gameScene = GameSceneB1(fileNamed: "GameScene2"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
+        default: //case 3
+            if let gameScene = GameSceneB1(fileNamed: "GameScene3"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
         }
     }
     
     override public func loadNextScene(size: CGSize){
-        youWonScene = YouWonSceneB1(size: size)
+        //youWonScene = YouWonScene1(size: size)
+        switch deviceType {
+        case 1:
+            youWonScene = YouWonSceneB1(size: CGSize(width: 480, height: 640))
+        case 2:
+            youWonScene = YouWonSceneB1(size: CGSize(width: 480, height: 640))
+        default:
+            youWonScene = YouWonSceneB1(size: CGSize(width: 450, height: 800))
+        }
+        
         youWonScene.starCount = SKSpriteNode(imageNamed: "1-6stars")
     }
         
