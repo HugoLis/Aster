@@ -30,7 +30,14 @@ public class GameSceneD2: GameSceneC {
     }
     
     override public func loadNextScene(size: CGSize){
-        youWonScene = YouWonSceneD2(size: size)
+        switch deviceType {
+        case 1:
+            youWonScene = YouWonSceneD2(size: CGSize(width: 480, height: 640))
+        case 2:
+            youWonScene = YouWonSceneD2(size: CGSize(width: 480, height: 640))
+        default:
+            youWonScene = YouWonSceneD2(size: CGSize(width: 450, height: 800))
+        }
         youWonScene.starCount = SKSpriteNode(imageNamed: "2-6stars")
     }
     

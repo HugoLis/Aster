@@ -55,6 +55,20 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
     
         fadedButton.setScale(0.55)
         fadedButton.position = CGPoint(x: 115 ,y: -235)
+        //addChild(fadedButton)
+        
+        
+        switch deviceType {
+        //case 1:
+        case 2:
+            fadedButton.position = CGPoint(x: 10 ,y: -340)
+            fadedButton.setScale(0.6)
+        case 3: //case 3
+            fadedButton.position = CGPoint(x: 10 ,y: -360)
+            fadedButton.setScale(0.65)
+        default:
+            fadedButton.position = CGPoint(x: 115 ,y: -235)
+        }
         addChild(fadedButton)
         
         let introDefault = UserDefaults.standard
@@ -98,7 +112,6 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
     
             visualGravity?.position = planet1.position
             self.addChild(visualGravity!)
-
         }
         
         if tapCount == 1 {
@@ -152,19 +165,19 @@ public class GameScene0: SKScene, SKPhysicsContactDelegate {
                 text3.position = CGPoint(x: (-30+100), y: (-291+60))
                 text3.setScale(0.2625)
                 text33.position = CGPoint(x: (-30+100), y: (-291+35))
-                text33.setScale(0.2625)
+                text33.setScale(0.35)
                 self.addChild(arrow3)
                 self.addChild(text3)
                 self.addChild(text33)
             case 3: //case 3
                 arrow3.xScale = -1
-                arrow3.position = CGPoint (x: 30, y: -38)
+                arrow3.position = CGPoint (x: 30, y: -308)
                 button.position = CGPoint(x: 10 ,y: -360)
                 button.setScale(0.65)
-                text3.position = CGPoint(x: (-30+100), y: (-41+60))
+                text3.position = CGPoint(x: (-30+100), y: (-311+60))
                 text3.setScale(0.2625)
-                text33.position = CGPoint(x: (-30+100), y: (-41+35))
-                text33.setScale(0.2625)
+                text33.position = CGPoint(x: (-30+100), y: (-311+35))
+                text33.setScale(0.35)
                 self.addChild(arrow3)
                 self.addChild(text3)
                 self.addChild(text33)
