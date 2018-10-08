@@ -268,7 +268,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         //self.addChild(backToMenu)
     
         let buttonTexture: SKTexture = SKTexture(imageNamed:"redButton")
-        let buttonTextureSelected: SKTexture = SKTexture(imageNamed:"redButton") //pressedButton
+        let buttonTextureSelected: SKTexture = SKTexture(imageNamed:"pressedButton") //pressedButton
         button = Button(normalTexture: buttonTexture, selectedTexture: buttonTextureSelected, disabledTexture: buttonTexture)
         button.position = CGPoint(x: 115 ,y: -245)
         button.zPosition = 1

@@ -75,9 +75,20 @@ public class Button: SKSpriteNode {
         }
         isSelected = true
         startEngine()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02, execute: {
-            self.setGravity()
-        })
+        
+        
+        switch deviceType {
+        case 3:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.03, execute: {
+                self.setGravity()
+            })
+        default:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02, execute: {
+                self.setGravity()
+            })
+        }
+        
+
         
     }
     
