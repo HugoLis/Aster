@@ -16,10 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    let width = UIScreen.main.bounds.maxX
-    let height = UIScreen.main.bounds.maxY
-    print (width, height)
-    print(UIDevice().model)
     return true
   }
 

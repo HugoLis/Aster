@@ -38,13 +38,11 @@ class ViewController: UIViewController {
         if let scene = Menu(fileNamed: "GameScene") {
             scene.scaleMode = .aspectFill
             sceneView.presentScene(scene)
-            print("case0")
         }
     case 1: //iPad 3:4
         if let scene = Menu(fileNamed: "GameScene") {
             scene.scaleMode = .aspectFill
             sceneView.presentScene(scene)
-            print("case1")
         }
     case 2: //iPhone 16:9
         if let scene = Menu(fileNamed: "GameScene") { //on purposeproposital GameScene1
@@ -78,7 +76,6 @@ func defineDevice(width: CGFloat, height: CGFloat) -> Int {
     else {
         screenRatio = height/width
     }
-    print(screenRatio)
         //iPad 3:4 case -- 0.75
     if screenRatio >= 0.72 && screenRatio < 0.8 {
         deviceCode = 1
