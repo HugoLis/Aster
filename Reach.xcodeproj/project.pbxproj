@@ -46,6 +46,7 @@
 		48DBE1F4207402410096E1DF /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 48DBE1E9207402410096E1DF /* Sounds */; };
 		93D8589C3862CA9D7425BA8B /* Pods_Reach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978EA8BDAE4C7897B2F60422 /* Pods_Reach.framework */; };
 		9A0B7CC422D28EB0003117B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A0B7CC322D28EB0003117B9 /* GoogleService-Info.plist */; };
+		9A0B7CC722D298D6003117B9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A0B7CC622D298D6003117B9 /* Settings.bundle */; };
 		9A27A07020B2E95300918AB6 /* GameSceneC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27A06F20B2E95300918AB6 /* GameSceneC.swift */; };
 		9A27A07220B2EA8B00918AB6 /* GameSceneC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27A07120B2EA8B00918AB6 /* GameSceneC1.swift */; };
 		9A27A07520B2EAA600918AB6 /* YouWonSceneC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27A07420B2EAA600918AB6 /* YouWonSceneC1.swift */; };
@@ -165,6 +166,7 @@
 		7178EF52021366E900CD7891 /* Pods-ReachUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReachUITests.release.xcconfig"; path = "Target Support Files/Pods-ReachUITests/Pods-ReachUITests.release.xcconfig"; sourceTree = "<group>"; };
 		978EA8BDAE4C7897B2F60422 /* Pods_Reach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0B7CC322D28EB0003117B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9A0B7CC622D298D6003117B9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9A27A06F20B2E95300918AB6 /* GameSceneC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneC.swift; sourceTree = "<group>"; };
 		9A27A07120B2EA8B00918AB6 /* GameSceneC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneC1.swift; sourceTree = "<group>"; };
 		9A27A07420B2EAA600918AB6 /* YouWonSceneC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWonSceneC1.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				48D9004E2073EE70008F5CE1 /* Reach */,
+				9A0B7CC622D298D6003117B9 /* Settings.bundle */,
 				48D900632073EE71008F5CE1 /* ReachTests */,
 				48D9006E2073EE71008F5CE1 /* ReachUITests */,
 				48D9004D2073EE70008F5CE1 /* Products */,
@@ -784,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9745EA22D26D09007A8C8C /* GameScene0.sks in Resources */,
+				9A0B7CC722D298D6003117B9 /* Settings.bundle in Resources */,
 				48DBE1F2207402410096E1DF /* StarCounter in Resources */,
 				48DBE1EA207402410096E1DF /* Actions.sks in Resources */,
 				9A34F50021695706005AF3F0 /* GameScene2.sks in Resources */,
