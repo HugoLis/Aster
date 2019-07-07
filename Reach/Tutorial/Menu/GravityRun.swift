@@ -17,6 +17,11 @@ public class GravityButton: RunButton {
         if wasShown==1 {
             //
         switch deviceType {
+            case 0:
+                if let gameScene = GameScene1(fileNamed: "GameScene0"){
+                    gameScene.scaleMode = .aspectFill
+                    parentNode.self.view?.presentScene(gameScene, transition: reveal)
+                }
             case 1:
                 if let gameScene = GameScene1(fileNamed: "GameScene"){
                     gameScene.scaleMode = .aspectFill
@@ -41,6 +46,11 @@ public class GravityButton: RunButton {
         else{
             
             switch deviceType {
+            case 0:
+                if let gameScene = GameScene0(fileNamed: "GameScene0"){//0
+                    gameScene.scaleMode = .aspectFill
+                    parentNode.self.view?.presentScene(gameScene, transition: reveal)
+                }
             case 1:
                 if let gameScene = GameScene0(fileNamed: "GameScene"){//0
                     gameScene.scaleMode = .aspectFill

@@ -54,6 +54,7 @@
 		9A2CC21320B11C51003E7263 /* OrbitRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2CC21220B11C51003E7263 /* OrbitRun.swift */; };
 		9A34F50021695706005AF3F0 /* GameScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A34F4FF21695706005AF3F0 /* GameScene2.sks */; };
 		9A34F50221695769005AF3F0 /* GameScene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A34F50121695769005AF3F0 /* GameScene3.sks */; };
+		9A9745EA22D26D09007A8C8C /* GameScene0.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A9745E922D26D09007A8C8C /* GameScene0.sks */; };
 		9AB4D02020B3359D00F0587A /* GameSceneC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4D01F20B3359D00F0587A /* GameSceneC2.swift */; };
 		9AB4D02220B335AD00F0587A /* YouWonSceneC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4D02120B335AD00F0587A /* YouWonSceneC2.swift */; };
 		9AB4D02420B335C300F0587A /* GameSceneC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4D02320B335C300F0587A /* GameSceneC3.swift */; };
@@ -163,6 +164,7 @@
 		9A2CC21220B11C51003E7263 /* OrbitRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitRun.swift; sourceTree = "<group>"; };
 		9A34F4FF21695706005AF3F0 /* GameScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene2.sks; sourceTree = "<group>"; };
 		9A34F50121695769005AF3F0 /* GameScene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene3.sks; sourceTree = "<group>"; };
+		9A9745E922D26D09007A8C8C /* GameScene0.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene0.sks; sourceTree = "<group>"; };
 		9AB4D01F20B3359D00F0587A /* GameSceneC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneC2.swift; sourceTree = "<group>"; };
 		9AB4D02120B335AD00F0587A /* YouWonSceneC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWonSceneC2.swift; sourceTree = "<group>"; };
 		9AB4D02320B335C300F0587A /* GameSceneC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneC3.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				48DBE1DF207402400096E1DF /* Actions.sks */,
 				48DBE1E1207402400096E1DF /* Button */,
+				9A9745E922D26D09007A8C8C /* GameScene0.sks */,
 				48DBE1E2207402400096E1DF /* GameScene.sks */,
 				9A34F4FF21695706005AF3F0 /* GameScene2.sks */,
 				9A34F50121695769005AF3F0 /* GameScene3.sks */,
@@ -733,6 +736,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A9745EA22D26D09007A8C8C /* GameScene0.sks in Resources */,
 				48DBE1F2207402410096E1DF /* StarCounter in Resources */,
 				48DBE1EA207402410096E1DF /* Actions.sks in Resources */,
 				9A34F50021695706005AF3F0 /* GameScene2.sks in Resources */,
@@ -942,7 +946,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -995,7 +999,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1007,12 +1011,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AD2MZY3MHY;
 				INFOPLIST_FILE = Reach/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = academy.aster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1026,12 +1029,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AD2MZY3MHY;
 				INFOPLIST_FILE = Reach/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = academy.aster;
 				PRODUCT_NAME = "$(TARGET_NAME)";

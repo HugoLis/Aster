@@ -8,6 +8,11 @@ public class GameScene5: GameScene {
     override func resetScene(){
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
         switch deviceType {
+        case 0:
+            if let gameScene = GameScene5(fileNamed: "GameScene0"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
         case 1:
             if let gameScene = GameScene5(fileNamed: "GameScene"){
                 gameScene.scaleMode = .aspectFill

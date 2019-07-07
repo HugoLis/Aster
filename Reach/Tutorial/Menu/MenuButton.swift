@@ -11,6 +11,11 @@ public class MenuButton: RunButton {
             let reveal = SKTransition.doorsCloseHorizontal(withDuration: 0.75)
             
         switch deviceType {
+            case 0:
+                if let gameScene = Menu(fileNamed: "GameScene0"){
+                    gameScene.scaleMode = .aspectFill
+                    parentNode.self.view?.presentScene(gameScene, transition: reveal)
+                }
             case 1:
                 if let gameScene = Menu(fileNamed: "GameScene"){
                     gameScene.scaleMode = .aspectFill

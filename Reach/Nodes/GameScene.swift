@@ -289,6 +289,10 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     switch deviceType {
+    case 0:
+        backToMenu.position = CGPoint(x: 0 ,y: 305)
+        currentDeaths.position = CGPoint(x: -185, y: 300)
+        button.position = CGPoint(x: 115 ,y: -245)
     case 1:
         backToMenu.position = CGPoint(x: 0 ,y: 305)
         currentDeaths.position = CGPoint(x: -185, y: 300)
@@ -356,6 +360,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
 
         
         switch deviceType {
+        case 0:
+            leastDeaths.position = CGPoint(x: 170, y: 300)
         case 1:
             leastDeaths.position = CGPoint(x: 170, y: 300)
         case 2:

@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     let width = UIScreen.main.bounds.maxX
     let height = UIScreen.main.bounds.maxY
+    
     deviceType = defineDevice(width: width, height: height)
     //print (deviceType)
     
@@ -33,10 +34,17 @@ class ViewController: UIViewController {
     sceneView.PlayBackgroundMusic()
     
     switch deviceType {
-    case 1: //iPad
+    case 0: //iPad 11"
         if let scene = Menu(fileNamed: "GameScene") {
             scene.scaleMode = .aspectFill
             sceneView.presentScene(scene)
+            print("case0")
+        }
+    case 1: //iPad 3:4
+        if let scene = Menu(fileNamed: "GameScene") {
+            scene.scaleMode = .aspectFill
+            sceneView.presentScene(scene)
+            print("case1")
         }
     case 2: //iPhone 16:9
         if let scene = Menu(fileNamed: "GameScene") { //on purposeproposital GameScene1
@@ -63,16 +71,22 @@ class ViewController: UIViewController {
 
 func defineDevice(width: CGFloat, height: CGFloat) -> Int {
     var screenRatio:CGFloat = 0.0 // short/long
-    var deviceCode = 0
+    var deviceCode = -1
     if width < height {
         screenRatio = width/height
     }
     else {
         screenRatio = height/width
     }
-    //iPad case -- 0.75
-    if screenRatio >= 0.6 && screenRatio < 0.8 {
+    print(screenRatio)
+        //iPad 3:4 case -- 0.75
+    if screenRatio >= 0.72 && screenRatio < 0.8 {
         deviceCode = 1
+    }
+        
+        //iPad 11" case -- 0.6984
+    else if screenRatio >= 0.6 && screenRatio < 0.72{
+        deviceCode = 0
     }
         //iPhone 16:9 case -- 0.5622
     else if screenRatio >= 0.5 && screenRatio < 0.6 {

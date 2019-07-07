@@ -6,6 +6,11 @@ public class YouWonSceneB3: YouWonScene {
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
         switch deviceType {
+        case 0:
+            if let gameScene = GameSceneB4(fileNamed: "GameScene0"){
+                gameScene.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene, transition: reveal)
+            }
         case 1:
             if let gameScene = GameSceneB4(fileNamed: "GameScene"){
                 gameScene.scaleMode = .aspectFill
