@@ -159,7 +159,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         
         backgroundColor = UIColor(red:0.16, green:0.16, blue:0.16, alpha:1.0)
     
-        rocket.physicsBody = SKPhysicsBody(texture: rocket.texture!, size: rocket.size)
+        let rocketTexture = SKTexture(imageNamed: "rocketTexture")
+        rocket.physicsBody = SKPhysicsBody(texture: rocketTexture, size: rocket.size)
         rocket.physicsBody?.isDynamic = true
         rocket.physicsBody?.categoryBitMask = PhysicsCategory.Rocket
         rocket.physicsBody?.contactTestBitMask = PhysicsCategory.Planet
@@ -173,7 +174,12 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         rocket.setScale(0.22)
     
         star.setScale(0.4)
-        star.physicsBody = SKPhysicsBody(texture: star.texture!, size: star.size)
+    
+        //let starTexture = SKTexture(imageNamed: "starTexture")
+        let path = Paths()
+        let starPath = path.star.cgPath
+        star.physicsBody = SKPhysicsBody(edgeLoopFrom: starPath)
+    
         star.physicsBody?.isDynamic = false
         star.physicsBody?.categoryBitMask = PhysicsCategory.Star
         star.physicsBody?.contactTestBitMask = PhysicsCategory.Rocket
@@ -181,7 +187,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         star.physicsBody?.usesPreciseCollisionDetection = true
     
         star2.setScale(0.4)
-        star2.physicsBody = SKPhysicsBody(texture: star.texture!, size: star.size)
+        star2.physicsBody = SKPhysicsBody(edgeLoopFrom: starPath)
         star2.physicsBody?.isDynamic = false
         star2.physicsBody?.categoryBitMask = PhysicsCategory.Star
         star2.physicsBody?.contactTestBitMask = PhysicsCategory.Rocket
@@ -189,7 +195,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         star2.physicsBody?.usesPreciseCollisionDetection = true
     
         star3.setScale(0.4)
-        star3.physicsBody = SKPhysicsBody(texture: star.texture!, size: star.size)
+        star3.physicsBody = SKPhysicsBody(edgeLoopFrom: starPath)
         star3.physicsBody?.isDynamic = false
         star3.physicsBody?.categoryBitMask = PhysicsCategory.Star
         star3.physicsBody?.contactTestBitMask = PhysicsCategory.Rocket
@@ -197,7 +203,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         star3.physicsBody?.usesPreciseCollisionDetection = true
     
         star4.setScale(0.4)
-        star4.physicsBody = SKPhysicsBody(texture: star.texture!, size: star.size)
+        star4.physicsBody = SKPhysicsBody(edgeLoopFrom: starPath)
         star4.physicsBody?.isDynamic = false
         star4.physicsBody?.categoryBitMask = PhysicsCategory.Star
         star4.physicsBody?.contactTestBitMask = PhysicsCategory.Rocket

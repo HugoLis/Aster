@@ -49,7 +49,7 @@ public class GameScene1: GameScene {
     override public func didMove(to view: SKView) {
         
         super.didMove(to: view)
-        
+        //self.view?.showsPhysics = true
         rocket.zRotation = 0.52
         
         planet1.setScale(0.75)
